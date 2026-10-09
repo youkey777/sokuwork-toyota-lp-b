@@ -1,0 +1,338 @@
+/* ===== hero：ヘッダー帯＋ファーストビュー＋数字3列＋正社員登用の行 =====
+   最初の画面（スマホ 390×844・PC 1280×900）に見出し・数字・応募ボタンが収まるよう、
+   写真の高さを画面の高さから決める（svh）。 */
+
+section[data-unit="hero"]{
+  background: #072646;
+  color: #fcfcfc;
+}
+
+/* --- ヘッダー帯 --- */
+.hero-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 56px;
+  padding-inline: var(--g);
+  border-bottom: 1px solid #04203f;
+}
+
+.hero-logo{
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  color: #ffffff;
+}
+
+/* 右上の小さい応募ボタン（クリーム縁＋オレンジのグラデ＋下の厚み） */
+.hero-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  height: 40px;
+  padding: 0 14px 0 16px;
+  border: 2px solid #fce796;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #fe940d 0, #fe6b08 50%, #fe4e01 100%);
+  box-shadow: 0 3px 0 #cd4a02, 0 4px 2px rgba(0, 0, 0, 0.3);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  color: #feffff;
+}
+
+.hero-btn-arrow{
+  width: 0.55em;
+  height: 0.9em;
+  flex: none;
+}
+
+/* --- 写真と見出し --- */
+.hero-visual{
+  position: relative;
+  /* スマホ: 画面の高さから、ヘッダー・数字・登用の行の分を引いた高さ */
+  height: clamp(300px, calc(100svh - 56px - 236px), 560px);
+  overflow: hidden;
+}
+
+.hero-photo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 30%;
+}
+
+/* 文字を読みやすくする下からの紺の影 */
+.hero-visual::after{
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 62%;
+  background: linear-gradient(to top, rgba(4, 26, 52, 0.78) 0%, rgba(4, 26, 52, 0.35) 55%, rgba(4, 26, 52, 0) 100%);
+  pointer-events: none;
+}
+
+.hero-copy{
+  position: absolute;
+  z-index: 1;
+  left: var(--g);
+  right: var(--g);
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-feature-settings: "palt" 1;
+  text-shadow: 0 2px 6px rgba(0, 10, 30, 0.45);
+  color: #fcfcfc;
+}
+
+.hero-kicker{
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+/* 2行の太い見出し。列の幅に合わせて文字の大きさを決め、1行に収める */
+.hero-lead{
+  display: block;
+  font-weight: 900;
+  line-height: 1.12;
+  white-space: nowrap;
+  letter-spacing: -0.06em;
+  font-size: min(calc((100vw - 2 * var(--g)) / 9.05), 7rem);
+}
+
+.hero-lead1{
+  margin-top: 4px;
+}
+
+/* --- 数字3列 --- */
+.hero-stats{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.95fr;
+  align-items: center;
+  margin: 0 var(--g);
+  padding: 16px 0 14px;
+  border-bottom: 1px solid #3a536c;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.hero-stats li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 2px 4px;
+}
+
+.hero-stats li + li{
+  border-left: 1px solid #8996a6;
+}
+
+.hero-s-label{
+  font-size: 0.9375rem;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: #fbfbfc;
+}
+
+.hero-s-val{
+  display: flex;
+  align-items: baseline;
+  line-height: 1;
+  margin-top: 4px;
+  color: #fcc102;
+}
+
+.hero-s-num{
+  font-size: min(11vw, 2.75rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.hero-s-unit{
+  font-size: min(4.6vw, 1.125rem);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  margin-left: 1px;
+}
+
+.hero-s3{
+  font-size: min(6.6vw, 1.75rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #fdfdfd;
+}
+
+/* --- 正社員登用の行 --- */
+.hero-seiki{
+  padding: 12px var(--g) 16px;
+  text-align: center;
+  font-size: min(4.5vw, 1.125rem);
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  color: #fbfcfc;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.hero-seiki-num{
+  font-size: 1.75em;
+  letter-spacing: -0.03em;
+  margin: 0 0.08em 0 0.12em;
+  line-height: 1;
+}
+
+/* ===== sm 640〜 ===== */
+@media (min-width: 640px){
+  .hero-header{ height: 68px; }
+  .hero-logo{ font-size: 1.625rem; }
+  .hero-btn{ height: 50px; font-size: 1.1875rem; padding: 0 18px 0 22px; border-width: 3px; }
+  .hero-visual{ height: clamp(340px, calc(100svh - 68px - 270px), 620px); }
+  .hero-kicker{ font-size: 1.75rem; }
+  .hero-stats{ padding: 22px 0 18px; }
+  .hero-s-label{ font-size: 1.375rem; }
+  .hero-s-num{ font-size: 4.25rem; }
+  .hero-s-unit{ font-size: 1.75rem; }
+  .hero-s3{ font-size: 2.75rem; }
+  .hero-seiki{ font-size: 1.5rem; padding: 16px var(--g) 20px; }
+}
+
+/* ===== md 768〜 ===== */
+@media (min-width: 768px){
+  .hero-header{ height: 80px; }
+  .hero-logo{ font-size: 2rem; }
+  .hero-btn{ height: 58px; font-size: 1.4375rem; }
+  .hero-visual{ height: clamp(380px, calc(100svh - 80px - 300px), 680px); }
+  .hero-copy{ bottom: 26px; }
+  .hero-kicker{ font-size: 2.25rem; }
+  .hero-s-label{ font-size: 1.75rem; }
+  .hero-s-num{ font-size: 5.5rem; }
+  .hero-s-unit{ font-size: 2.25rem; }
+  .hero-s3{ font-size: 3.5rem; }
+  .hero-seiki{ font-size: 2rem; }
+}
+
+/* ===== lg 1024〜（見本と同じ組み。写真の高さだけ画面の高さに合わせる） ===== */
+@media (min-width: 1024px){
+  .hero-header{ height: 6rem; padding-inline: 2.25rem 2.25rem; }
+  .hero-logo{ font-size: 2.55rem; letter-spacing: 0.004em; }
+  .hero-btn{ height: 4.5rem; padding: 0 1.4rem 0 1.85rem; font-size: 1.8rem; letter-spacing: -0.04em; border-width: 3px; box-shadow: 0 5px 0 #cd4a02, 0 6px 2px rgba(0, 0, 0, 0.3); }
+  .hero-btn-arrow{ margin-left: 0.25em; }
+  /* PC 1280×900 で数字まで見えるよう、写真は画面の高さから決める（上限は見本の 810px） */
+  .hero-visual{ height: clamp(28rem, calc(100svh - 6rem - 15rem), 50.625rem); }
+  /* 写真が低くなっても顔が見出しに隠れないよう、少し下側を見せる */
+  .hero-photo{ object-position: 60% 30%; }
+  .hero-visual::after{ height: 55%; background: linear-gradient(to top, rgba(4, 26, 52, 0.55) 0%, rgba(4, 26, 52, 0.2) 55%, rgba(4, 26, 52, 0) 100%); }
+  .hero-copy{ left: 1.5rem; bottom: 1.6rem; }
+  .hero-kicker{ font-size: 3rem; margin-left: 0.4rem; }
+  .hero-lead{ font-size: 7.1rem; letter-spacing: -0.075em; line-height: 1.1; }
+  .hero-stats{ margin: 0 2.4rem; padding: 1.5rem 0 1.4rem; grid-template-columns: 1fr 1fr 1fr; }
+  .hero-stats li{ padding: 0.25rem 0; }
+  .hero-s-label{ font-size: 2.85rem; }
+  .hero-s-num{ font-size: 8.2rem; letter-spacing: -0.05em; }
+  .hero-s-unit{ font-size: 3.2rem; letter-spacing: -0.1em; }
+  .hero-s3{ font-size: 4.6rem; letter-spacing: 0.02em; }
+  .hero-seiki{ font-size: 3rem; padding: 1rem var(--g) 1.4rem; letter-spacing: 0.05em; }
+  .hero-seiki-num{ font-size: 1.48em; }
+}
+
+/* ===== xl 1280〜 は lg と同じ組み ===== */
+
+/* ===== 2xl 1536〜: 文字の基準が18pxになり一回り大きくなる。見出しが大きくなる分、写真を少し高くして顔に重ならないようにする ===== */
+@media (min-width: 1536px){
+  .hero-visual{ height: clamp(28rem, calc(100svh - 6rem - 14.5rem), 50.625rem); }
+  .hero-photo{ object-position: 60% 30%; }
+}
+
+/* ===================== 案B（黒×黄）の見た目 2026-10-09 =====================
+   黒の面・黄色の数字・赤い応募ボタン。写真の下側に斜めに切った黒の面を重ね、その上に見出しを置く */
+section[data-unit="hero"]{ background: var(--ink); color: #fff; display: flow-root; }
+.hero-header{ background: var(--ink2); border-bottom: 0; }
+.hero-logo{ color: #fff; padding-bottom: 5px; border-bottom: 2px solid #6b7275; letter-spacing: 0.02em; }
+.hero-btn{
+  border: 0; border-radius: 3px;
+  background: linear-gradient(105deg, var(--red) 0 70%, #e0182b 70% 100%);
+  box-shadow: 0 3px 0 var(--red-d);
+  color: #fff;
+}
+.hero-visual{ background: var(--ink); height: clamp(300px, calc(100svh - 56px - 280px), 560px); }
+.hero-photo{ object-position: 72% 18%; }
+/* 写真の下に重ねる、斜めに切った黒の面（見本の見出しの下地） */
+.hero-visual::after{
+  inset: 0; height: auto;
+  background: var(--ink);
+  clip-path: polygon(0 var(--p1, 64%), 100% var(--p2, 83%), 100% 100%, 0 100%);
+}
+.hero-visual::before{
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: var(--yellow);
+  clip-path: polygon(0 calc(var(--p1, 64%) - 6px), 100% calc(var(--p2, 83%) - 6px), 100% var(--p2, 83%), 0 var(--p1, 64%));
+}
+.hero-copy{ z-index: 2; text-shadow: none; color: #fff; }
+.hero-kicker{
+  display: inline-block; padding: 0.12em 0.55em 0.1em; margin-bottom: 0.25em;
+  background: var(--yellow); color: #111; transform: skewX(-10deg);
+  font-weight: 900; letter-spacing: 0.04em;
+}
+.hero-lead .yl{ color: var(--yellow); }
+
+/* 数字3つ（細い枠の箱。数字は黄色の極太の斜体） */
+.hero-stats{
+  gap: 5px; padding: 12px 0 8px; border-bottom: 0; text-shadow: none;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.hero-stats li{ border: 2px solid #4f5659; padding: 6px 0 7px; min-width: 0; }
+.hero-stats li + li{ border-left: 2px solid #4f5659; }
+.hero-s-label{ color: #fff; }
+.hero-s-val{ color: var(--yellow); }
+.hero-s-num{ font-style: italic; letter-spacing: -0.03em; padding-right: 0.06em; }
+.hero-s-unit{ color: #fff; }
+.hero-s3{ color: var(--yellow); font-size: min(6.4vw, 1.9rem); letter-spacing: 0; }
+.hero-seiki{
+  margin: 0 var(--g) 14px; padding: 6px 6px 7px;
+  border: 2px solid #4f5659; text-shadow: none; color: #fff;
+}
+.hero-seiki-num, .hero-seiki-b{ color: var(--yellow); }
+.hero-seiki-num{ font-style: italic; }
+
+@media (min-width: 640px){
+  .hero-visual{ --p1: 60%; --p2: 80%; }
+  .hero-stats{ gap: 10px; padding: 20px 0 14px; }
+  .hero-stats li{ padding: 12px 4px; }
+  .hero-s3{ font-size: 2.6rem; }
+  .hero-seiki{ padding: 12px 8px 14px; margin-bottom: 24px; }
+}
+@media (min-width: 768px){
+  .hero-visual{ --p1: 56%; --p2: 76%; }
+  .hero-s3{ font-size: 3.3rem; }
+}
+@media (min-width: 1024px){
+  .hero-header{ border-bottom: 0; }
+  .hero-btn{ box-shadow: 0 5px 0 var(--red-d); border: 0; }
+  .hero-visual{ --p1: 50%; --p2: 61%; }
+  .hero-photo{ object-position: 72% 26%; }
+  .hero-kicker{ font-size: 2.6rem; }
+  .hero-lead{ font-size: 6rem; letter-spacing: -0.06em; }
+  .hero-visual::after{ height: auto; background: var(--ink); }
+  .hero-stats{ gap: 0.8rem; padding: 1.6rem 0 1.1rem; }
+  .hero-stats li{ padding: 0.9rem 0 1rem; border-width: 3px; }
+  .hero-stats li + li{ border-left-width: 3px; }
+  .hero-s3{ font-size: 4.4rem; }
+  .hero-s-num{ font-size: 7.4rem; }
+  .hero-s-unit{ font-size: 2.9rem; }
+  .hero-seiki{ margin: 0 2.4rem 2rem; padding: 0.6rem var(--g) 0.9rem; border-width: 3px; }
+}
+/* 案B: 数字の箱・登用の行が高くなった分、写真の高さを幅ごとに決め直す（最初の画面に見出し・数字3つ・登用の行まで入れる） */
+@media (min-width: 640px){ .hero-visual{ height: clamp(340px, calc(100svh - 68px - 300px), 620px); } }
+@media (min-width: 768px){ .hero-visual{ height: clamp(380px, calc(100svh - 80px - 330px), 680px); } }
+@media (min-width: 1024px){ .hero-visual{ height: clamp(28rem, calc(100svh - 6rem - 17rem), 50.625rem); } }
+@media (min-width: 1536px){ .hero-visual{ height: clamp(28rem, calc(100svh - 6rem - 16.5rem), 50.625rem); } }

@@ -1,0 +1,576 @@
+/* ===== boshu：募集要項（給与・特別手当・満了金の表・手当福利厚生・勤務時間・休日休暇・勤務地） ===== */
+
+section[data-unit="boshu"]{
+  background: #fcfdfe;
+  color: #0b2447;
+  padding: 26px var(--g) 30px;
+}
+
+.boshu-heading{
+  text-align: center;
+}
+
+.boshu-kicker{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  color: #0b2447;
+}
+
+.boshu-sl,
+.boshu-sr{
+  font-weight: 400;
+  color: #45546a;
+}
+
+.boshu-title{
+  font-size: 3.4rem;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  color: #0b2447;
+}
+
+/* 紺の見出し帯 */
+.boshu-bar{
+  margin-top: 26px;
+  padding: 8px 14px;
+  background: #103454;
+  font-size: 1.1875rem;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.boshu-heading + .boshu-bar{
+  margin-top: 14px;
+}
+
+/* 給与 */
+.boshu-pay{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: 8px;
+  margin-top: 12px;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.boshu-gekkyu{
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.boshu-num{
+  font-size: min(3.6rem, calc((100vw - 2 * var(--g) - 7.6rem) / 4.4));
+  letter-spacing: 0.01em;
+  color: #f0a800;
+}
+
+.boshu-yen{
+  font-size: 1.9rem;
+}
+
+.boshu-paynote{
+  margin-top: 6px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #3c4a60;
+}
+
+/* 特別手当の2枚 */
+.boshu-cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.boshu-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 6px 10px;
+  border-radius: 10px;
+  background: #f0f3f8;
+  text-align: center;
+}
+
+.boshu-card-t{
+  font-size: min(1.0625rem, calc((100vw - 2 * var(--g) - 40px) / 2 / 7.3));
+  font-weight: 900;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.boshu-card-v{
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  line-height: 1.05;
+}
+
+.boshu-card-n{
+  font-size: 3.6rem;
+  font-weight: 900;
+  color: #f0a800;
+}
+
+.boshu-card-u{
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+/* 開閉（支給条件・1日のスケジュール） */
+.boshu-acc{
+  margin-top: 10px;
+}
+
+.boshu-sum{
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 10px 52px 10px 16px;
+  list-style: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #eff3f8;
+  font-size: 1.0625rem;
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.boshu-sum::-webkit-details-marker{
+  display: none;
+}
+
+.boshu-plus{
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  margin-top: -11px;
+}
+
+.boshu-plus::before,
+.boshu-plus::after{
+  content: "";
+  position: absolute;
+  background: #0a2042;
+}
+
+.boshu-plus::before{
+  left: 0;
+  top: calc(50% - 2px);
+  width: 100%;
+  height: 4px;
+}
+
+.boshu-plus::after{
+  left: calc(50% - 2px);
+  top: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.boshu-acc[open] .boshu-plus::after{
+  display: none;
+}
+
+.boshu-open{
+  margin-top: 8px;
+  padding: 14px 14px;
+  border-radius: 10px;
+  background: #f5f7fa;
+  color: #0b2447;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.boshu-cond dt{
+  font-weight: 700;
+  font-size: 1.0625rem;
+  margin-top: 8px;
+}
+
+.boshu-cond dt:first-child{
+  margin-top: 0;
+}
+
+.boshu-cond dd{
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.boshu-sched{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.boshu-sched th,
+.boshu-sched td{
+  padding: 8px 4px;
+  border-bottom: 1px solid #cdd6e3;
+  vertical-align: middle;
+}
+
+.boshu-sched th{
+  font-weight: 700;
+}
+
+/* 「作業」「休憩」や「16:00〜翌0:40」が途中で折れないように */
+.boshu-sched th,
+.boshu-sched td:nth-child(2),
+.boshu-sched td:nth-child(3){
+  white-space: nowrap;
+}
+
+/* 満了金の表 */
+.boshu-table{
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+
+.boshu-table th,
+.boshu-table td{
+  padding: 10px 4px;
+  border-bottom: 1px solid #c9d3e3;
+  white-space: nowrap;
+}
+
+.boshu-table thead th{
+  font-weight: 900;
+  text-align: center;
+}
+
+.boshu-table tbody th{
+  text-align: center;
+  font-weight: 700;
+}
+
+.boshu-table td{
+  text-align: right;
+  padding-right: 3%;
+}
+
+/* 手当・待遇・福利厚生（チェックつき2列） */
+.boshu-list{
+  list-style: none;
+  columns: 2;
+  column-gap: 12px;
+  margin-top: 6px;
+}
+
+.boshu-li{
+  break-inside: avoid;
+  position: relative;
+  padding: 10px 0 10px 26px;
+  border-bottom: 1px solid #d3dbe6;
+  font-size: min(1.0625rem, calc((100vw - 2 * var(--g) - 64px) / 2 / 8));
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.boshu-li::before{
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  width: 12px;
+  height: 7px;
+  margin-top: -6px;
+  border-left: 3px solid #0b2447;
+  border-bottom: 3px solid #0b2447;
+  transform: rotate(-45deg);
+}
+
+/* 勤務時間 */
+.boshu-shift{
+  margin-top: 12px;
+  text-align: center;
+  font-size: min(1.375rem, calc((100vw - 2 * var(--g)) / 15));
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.boshu-scards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.boshu-scard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 4px;
+  border-radius: 10px;
+  background: #f0f3f8;
+  line-height: 1.25;
+}
+
+.boshu-scard-t{
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.boshu-scard-v{
+  font-size: min(1.5rem, calc((100vw - 2 * var(--g) - 40px) / 2 / 7.3));
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.boshu-swap{
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.boshu-notes{
+  margin-top: 10px;
+  padding-left: 1em;
+  text-indent: -1em;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #3c4a60;
+}
+
+/* 休日休暇 */
+.boshu-holiday{
+  display: flex;
+  align-items: baseline;
+  margin-top: 10px;
+  line-height: 1.15;
+  font-weight: 900;
+}
+
+.boshu-hol1,
+.boshu-hol3{
+  font-size: min(2.6rem, calc((100vw - 2 * var(--g)) / 9.2));
+}
+
+.boshu-hol2{
+  font-size: min(4rem, calc((100vw - 2 * var(--g)) / 5.4));
+  line-height: 1;
+  margin: 0 0.04em;
+  color: #f0a800;
+}
+
+.boshu-holtext{
+  margin-top: 6px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+/* 勤務地（本文と地図） */
+.boshu-placebox{
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.boshu-place{
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.boshu-map{
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* ===== sm 640〜 ===== */
+@media (min-width: 640px){
+  section[data-unit="boshu"]{ padding: 32px var(--g) 36px; }
+  .boshu-kicker{ font-size: 1.3rem; }
+  .boshu-title{ font-size: 4.4rem; }
+  .boshu-bar{ font-size: 1.4rem; padding: 10px 18px; }
+  .boshu-gekkyu{ font-size: 2rem; }
+  .boshu-num{ font-size: 4.6rem; }
+  .boshu-yen{ font-size: 2.6rem; }
+  .boshu-paynote{ font-size: 1rem; }
+  .boshu-card{ padding: 16px 10px 12px; }
+  .boshu-card-t{ font-size: 1.4rem; }
+  .boshu-card-n{ font-size: 4.6rem; }
+  .boshu-card-u{ font-size: 2rem; }
+  .boshu-sum{ font-size: 1.25rem; min-height: 60px; padding-left: 22px; }
+  .boshu-open{ padding: 18px 22px; font-size: 1.0625rem; }
+  .boshu-sched{ font-size: 1.0625rem; }
+  .boshu-table{ font-size: 1.25rem; }
+  .boshu-table td{ padding-right: 10%; }
+  .boshu-li{ font-size: 1.3rem; padding-left: 34px; }
+  .boshu-li::before{ width: 16px; height: 9px; left: 6px; }
+  .boshu-list{ column-gap: 24px; }
+  .boshu-shift{ font-size: 1.75rem; }
+  .boshu-scard-t{ font-size: 1.5rem; }
+  .boshu-scard-v{ font-size: 1.8rem; }
+  .boshu-swap{ font-size: 1.25rem; }
+  .boshu-notes{ font-size: 1.0625rem; }
+  .boshu-hol1, .boshu-hol3{ font-size: 3.6rem; }
+  .boshu-hol2{ font-size: 5.4rem; }
+  .boshu-holtext{ font-size: 1.3rem; }
+  .boshu-placebox{ grid-template-columns: 1fr 0.8fr; align-items: center; gap: 20px; }
+  .boshu-place{ font-size: 1.25rem; }
+  .boshu-map{ max-width: none; }
+}
+
+/* ===== md 768〜 ===== */
+@media (min-width: 768px){
+  .boshu-title{ font-size: 5.2rem; }
+  .boshu-bar{ font-size: 1.6rem; }
+  .boshu-gekkyu{ font-size: 2.6rem; }
+  .boshu-num{ font-size: 5.6rem; }
+  .boshu-yen{ font-size: 3.2rem; }
+  .boshu-card-t{ font-size: 1.75rem; }
+  .boshu-card-n{ font-size: 5.6rem; }
+  .boshu-card-u{ font-size: 2.6rem; }
+  .boshu-table{ font-size: 1.4rem; }
+  .boshu-li{ font-size: 1.5rem; }
+  .boshu-shift{ font-size: 2.1rem; }
+  .boshu-scard-t{ font-size: 1.8rem; }
+  .boshu-scard-v{ font-size: 2.3rem; }
+  .boshu-hol1, .boshu-hol3{ font-size: 4.2rem; }
+  .boshu-hol2{ font-size: 6.4rem; }
+  .boshu-holtext{ font-size: 1.5rem; }
+  .boshu-place{ font-size: 1.5rem; }
+}
+
+/* ===== lg 1024〜（見本: 募集要項115px・帯の見出し31px・316,580は110px・表27px） ===== */
+@media (min-width: 1024px){
+  section[data-unit="boshu"]{ padding: 2.4rem 2rem 3rem; }
+  .boshu-kicker{ font-size: 1.65rem; gap: 1.3em; }
+  .boshu-sl, .boshu-sr{ font-size: 1.4em; }
+  .boshu-title{ font-size: 7.2rem; line-height: 1.05; letter-spacing: 0.02em; }
+  .boshu-bar{ margin-top: 3rem; padding: 0.95rem 1.4rem; font-size: 1.95rem; }
+  .boshu-heading + .boshu-bar{ margin-top: 1rem; }
+  .boshu-pay{ margin-top: 1.1rem; column-gap: 1.6rem; }
+  .boshu-gekkyu{ font-size: 3.6rem; }
+  .boshu-num{ font-size: 6.9rem; letter-spacing: 0.01em; }
+  .boshu-yen{ font-size: 4.2rem; }
+  .boshu-paynote{ font-size: 1.3rem; margin-top: 0.2rem; }
+  .boshu-cards{ gap: 1rem; margin: 1.1rem 0.6rem 0; }
+  .boshu-card{ padding: 1.3rem 0.8rem 0.9rem; }
+  .boshu-card-t{ font-size: 2.45rem; }
+  .boshu-card-n{ font-size: 7.4rem; letter-spacing: 0.02em; }
+  .boshu-card-u{ font-size: 3.6rem; margin-left: 0.6rem; }
+  .boshu-acc{ margin: 0.8rem 0.6rem 0; }
+  .boshu-sum{ min-height: 4.6rem; font-size: 1.8rem; padding: 0.6rem 4rem 0.6rem 1.7rem; }
+  .boshu-plus{ width: 2rem; height: 2rem; margin-top: -1rem; right: 2rem; }
+  .boshu-plus::before{ height: 5px; top: calc(50% - 2.5px); }
+  .boshu-plus::after{ width: 5px; left: calc(50% - 2.5px); }
+  .boshu-open{ font-size: 1.375rem; padding: 1.25rem 1.75rem; }
+  .boshu-cond dt{ font-size: 1.5rem; }
+  .boshu-sched{ font-size: 1.375rem; }
+  .boshu-table{ font-size: 1.7rem; margin: 1rem 0.6rem 0; width: calc(100% - 1.2rem); }
+  .boshu-table th, .boshu-table td{ padding: 0.8rem 0.25rem; }
+  .boshu-table td{ padding-right: 8.5%; }
+  .boshu-bar + .boshu-list{ margin-top: 1rem; }
+  .boshu-list{ column-gap: 1.7rem; padding: 0 0.8rem; }
+  .boshu-li{ font-size: 2.3rem; padding: 0.7rem 0 0.7rem 4.1rem; }
+  .boshu-li::before{ width: 1.45rem; height: 0.8rem; left: 1rem; border-width: 0 0 4px 4px; }
+  .boshu-shift{ font-size: 2.85rem; margin-top: 1rem; }
+  .boshu-scards{ gap: 1.3rem; margin: 0.9rem 0.6rem 0; }
+  .boshu-scard{ padding: 0.9rem 0.4rem 1rem; }
+  .boshu-scard-t{ font-size: 2.4rem; }
+  .boshu-scard-v{ font-size: 3.6rem; letter-spacing: -0.03em; }
+  .boshu-swap{ font-size: 1.95rem; margin-top: 1.2rem; }
+  .boshu-notes{ font-size: 1.5rem; margin: 1rem 0.6rem 0; line-height: 1.6; }
+  .boshu-bar:has(+ .boshu-holiday){ margin-top: 3.4rem; }
+  .boshu-holiday{ margin: 1rem 1.2rem 0; }
+  .boshu-hol1, .boshu-hol3{ font-size: 5.9rem; letter-spacing: -0.02em; }
+  .boshu-hol2{ font-size: 8.4rem; }
+  .boshu-holtext{ font-size: 2.15rem; margin: 0.3rem 1.2rem 0; line-height: 1.5; }
+  .boshu-placebox{ grid-template-columns: 1fr 25.9rem; gap: 1.5rem; padding: 0 0 0 1.5rem; align-items: start; margin-top: 1.4rem; }
+  .boshu-place{ font-size: 1.95rem; line-height: 1.7; margin-top: 2.2rem; }
+}
+
+/* 手当・待遇・福利厚生: 3列・大きな薄い番号の上に項目名（2026-10-09 発注主指示。見本は paystorage.co.jp の福利厚生） */
+.boshu-list{ columns: auto; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 6px; row-gap: 4px; margin-top: 14px; padding: 0; counter-reset: fuku; }
+.boshu-li{
+  counter-increment: fuku; position: relative; isolation: isolate;
+  display: flex; align-items: center; justify-content: center; min-height: 4.8em;
+  padding: 0 2px; border-bottom: 0; text-align: center; white-space: normal; word-break: keep-all;
+  font-size: min(0.98rem, calc((100vw - 2 * var(--g) - 12px) / 3 / 6.4)); font-weight: 800; line-height: 1.35; color: #0b2447;
+}
+.boshu-list .boshu-li::before{
+  content: counter(fuku, decimal-leading-zero);
+  position: absolute; inset: 0; z-index: -1; display: flex; align-items: center; justify-content: center;
+  width: auto; height: auto; margin: 0; border: 0; transform: none;
+  font-family: "Roboto", "Noto Sans JP", sans-serif; font-weight: 900; font-size: 3.9em; line-height: 1; letter-spacing: -0.04em;
+  color: #e2e7ee;
+}
+@media (min-width: 640px){
+  .boshu-list{ column-gap: 12px; row-gap: 8px; margin-top: 18px; }
+  .boshu-li{ font-size: 1.15rem; padding: 0 4px; min-height: 5em; }
+}
+@media (min-width: 1024px){
+  .boshu-bar + .boshu-list{ margin-top: 1.4rem; }
+  .boshu-list{ column-gap: 1.2rem; row-gap: 0.6rem; padding: 0 0.6rem; }
+  .boshu-li{ font-size: 1.7rem; padding: 0 0.4rem; min-height: 5em; }
+}
+
+/* ===================== 案B（黒×黄）の見た目 2026-10-09 =====================
+   白地に黒の太線。項目の見出しは黒の斜めのタブ＋黒の下線、金額は黒の極太に黄色のマーカー、表は黒の枠 */
+section[data-unit="boshu"]{ background: var(--paper); color: #111; }
+.boshu-kicker{ color: #111; }
+.boshu-sl, .boshu-sr{ color: #111; }
+.boshu-title{ color: #111; display: table; margin: 0 auto; padding: 0 0.15em; background: linear-gradient(transparent 62%, var(--yellow) 62%, var(--yellow) 92%, transparent 92%); }
+.boshu-bar{ background: none; padding: 0; border-bottom: 3px solid #111; color: #fff; }
+.boshu-bar > span{ display: inline-block; padding: 6px 24px 5px 14px; background: #111; clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%); }
+.boshu-gekkyu, .boshu-yen{ color: #111; }
+.boshu-num{ color: #111; font-family: "Roboto", "Noto Sans JP", sans-serif; font-style: italic; padding: 0 0.12em 0 0.04em; background: linear-gradient(transparent 56%, var(--yellow) 56%, var(--yellow) 94%, transparent 94%); }
+.boshu-paynote{ color: #4a4f52; }
+.boshu-card{ background: #fff; border: 3px solid #111; border-radius: 0; }
+.boshu-card-n{ color: #111; font-family: "Roboto", "Noto Sans JP", sans-serif; font-style: italic; padding-right: 0.06em; background: linear-gradient(transparent 56%, var(--yellow) 56%, var(--yellow) 94%, transparent 94%); }
+.boshu-sum{ background: #fff; border: 2px solid #111; border-radius: 0; color: #111; }
+.boshu-plus::before, .boshu-plus::after{ background: #111; }
+.boshu-open{ background: var(--gray); border-radius: 0; color: #111; border-left: 6px solid var(--yellow); }
+.boshu-sched th, .boshu-sched td{ border-bottom: 1px solid #b9bcbe; }
+.boshu-table{ border: 2px solid #111; }
+.boshu-table thead th{ background: #111; color: #fff; }
+.boshu-table th, .boshu-table td{ border-bottom: 1px solid #a9adaf; }
+.boshu-table tbody th{ background: var(--gray); border-right: 1px solid #a9adaf; }
+.boshu-table td + td{ border-left: 1px solid #a9adaf; }
+.boshu-li{ color: #111; }
+.boshu-list .boshu-li::before{ color: #e9eaea; }
+.boshu-scard{ background: var(--yellow); border: 3px solid #111; border-radius: 0; color: #111; }
+.boshu-notes{ color: #4a4f52; }
+.boshu-hol2{ color: #111; font-style: italic; padding: 0 0.04em 0 0; background: linear-gradient(transparent 56%, var(--yellow) 56%, var(--yellow) 94%, transparent 94%); }
+.boshu-placebox{ border: 3px solid #111; padding: 14px; }
+@media (min-width: 640px){
+  .boshu-bar > span{ padding: 8px 30px 7px 18px; }
+  .boshu-placebox{ padding: 18px 22px; }
+}
+@media (min-width: 1024px){
+  .boshu-bar{ padding: 0; border-bottom-width: 4px; }
+  .boshu-bar > span{ padding: 0.55rem 2.6rem 0.5rem 1.4rem; clip-path: polygon(0 0, 100% 0, calc(100% - 1.2rem) 100%, 0 100%); }
+  .boshu-table{ border-width: 3px; }
+  .boshu-card, .boshu-scard{ border-width: 4px; }
+  .boshu-placebox{ padding: 1.2rem 1.6rem; border-width: 4px; margin: 1.4rem 0.6rem 0; }
+}

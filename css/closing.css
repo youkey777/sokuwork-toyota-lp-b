@@ -1,0 +1,434 @@
+/* ===== closing：迷っているなら…＋写真＋4つの約束＋応募フォーム＋送信ボタン＋フッター ===== */
+
+section[data-unit="closing"]{
+  background: #0a2441;
+  color: #ffffff;
+}
+
+.closing-title{
+  display: flex;
+  flex-direction: column;
+  padding: 24px var(--g) 18px;
+  font-size: min(2.6rem, calc((100vw - 2 * var(--g)) / 10.4));
+  font-weight: 900;
+  line-height: 1.22;
+  letter-spacing: -0.03em;
+  font-feature-settings: "palt" 1;
+  text-shadow: 0 2px 6px rgba(0, 10, 30, 0.4);
+}
+
+.closing-title > span{
+  white-space: nowrap;
+}
+
+.closing-photo{
+  width: 100%;
+  aspect-ratio: 1024 / 479;
+  object-fit: cover;
+}
+
+@media (max-width: 639px){
+  .closing-photo{ aspect-ratio: 4 / 3; object-position: 45% 50%; }
+}
+
+/* 4つの約束 */
+.closing-promise-bg{
+  padding: 22px var(--g) 22px;
+}
+
+.closing-promise{
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #8a98ab;
+}
+
+.closing-promise li{
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  column-gap: 12px;
+  align-items: center;
+}
+
+.closing-circle{
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0a2441;
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.closing-ptitle{
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.closing-en{
+  letter-spacing: 0.02em;
+}
+
+.closing-psub{
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* 年収例…寮費0円（金の数字） */
+.closing-income{
+  margin-top: 16px;
+  text-align: center;
+  font-size: 1.0625rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.closing-g{
+  color: #f9c808;
+}
+
+.closing-gn{
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  font-size: 1.9em;
+  line-height: 1;
+  margin: 0 0.04em;
+  letter-spacing: -0.02em;
+}
+
+/* 下向きの太い矢印 */
+.closing-arrow{
+  display: block;
+  width: 44px;
+  height: 46px;
+  margin: 12px auto 4px;
+  background: #ffffff;
+  clip-path: polygon(30% 0, 70% 0, 70% 48%, 100% 48%, 50% 100%, 0 48%, 30% 48%);
+}
+
+.closing-lead{
+  text-align: center;
+  font-size: min(2.2rem, calc((100vw - 2 * var(--g)) / 10.2));
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+/* --- 応募フォーム --- */
+.closing-form{
+  padding: 22px var(--g) 30px;
+  background: #092442;
+}
+
+.closing-ftitle{
+  font-size: min(1.75rem, calc((100vw - 2 * var(--g)) / 13));
+  font-weight: 900;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.f-row{
+  margin-top: 14px;
+}
+
+.f-head{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.f-label{
+  font-size: 1.0625rem;
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.f-badge{
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #04163a;
+  font-size: 0.8125rem;
+  font-weight: 900;
+  line-height: 1.6;
+}
+
+.f-fields{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.f-in{
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 4px;
+  background: #f8f8f9;
+  color: #0b2447;
+  /* スマホで入力欄を押したときに画面が勝手に拡大しないよう16px以上 */
+  font-size: 1rem;
+}
+
+.f-in::placeholder{
+  color: #5d6676;
+}
+
+.f-sel{
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 30px;
+  background: #f8f8f9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10'%3E%3Cpolygon points='0,0 14,0 7,10' fill='%230b2447'/%3E%3C/svg%3E") no-repeat right 12px center / 12px 9px;
+}
+
+.f-slash{
+  flex: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.f-birth .year{
+  flex: 1.25;
+}
+
+.f-gender .f-fields{
+  gap: 28px;
+  min-height: 40px;
+}
+
+.f-radio{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.closing-radio{
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.closing-radio:checked::after{
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.closing-push{
+  margin-top: 26px;
+  text-align: center;
+  font-size: min(1.5rem, calc((100vw - 2 * var(--g)) / 17.8));
+  font-weight: 900;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.closing-push-m{
+  font-weight: 400;
+}
+
+.closing-agree{
+  margin-top: 4px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* 送信ボタン（オレンジの大きいボタン） */
+.closing-submit{
+  display: block;
+  width: 100%;
+  min-height: 76px;
+  margin-top: 14px;
+  border: 3px solid #fde27a;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #ff9a1f 0%, #fe780a 40%, #ff5a00 100%);
+  box-shadow: 0 6px 0 #c44700, 0 8px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  color: #fffaf5;
+}
+
+.closing-submit-t{
+  font-size: min(1.75rem, calc((100vw - 2 * var(--g)) / 9.6));
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(150, 40, 0, 0.35);
+}
+
+/* フッター */
+.closing-foot{
+  padding: 20px var(--g) 24px;
+  background: #fdfdfd;
+  color: #0b2447;
+}
+
+.closing-fname{
+  font-size: 1.375rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.closing-fbody{
+  margin-top: 8px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.closing-copy{
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+
+/* ===== sm 640〜 ===== */
+@media (min-width: 640px){
+  .closing-title{ font-size: 3.5rem; padding: 32px var(--g) 22px; }
+  .closing-promise-bg{ padding: 28px var(--g) 26px; }
+  .closing-promise li{ grid-template-columns: 56px 1fr; column-gap: 16px; }
+  .closing-circle{ width: 56px; height: 56px; font-size: 1.9rem; }
+  .closing-ptitle{ font-size: 1.6rem; }
+  .closing-psub{ font-size: 1.125rem; }
+  .closing-income{ font-size: 1.3rem; }
+  .closing-lead{ font-size: 2.8rem; }
+  .closing-form{ padding: 30px var(--g) 36px; }
+  .closing-ftitle{ font-size: 2.2rem; }
+  /* 見出しを左、入力欄を右の2列に */
+  .f-row{ display: grid; grid-template-columns: 9.5rem 1fr; align-items: center; column-gap: 14px; margin-top: 12px; }
+  .f-head{ margin-bottom: 0; justify-content: space-between; }
+  .f-label{ font-size: 1.15rem; }
+  .f-in{ height: 50px; font-size: 1.0625rem; }
+  .closing-push{ font-size: 2rem; }
+  .closing-agree{ font-size: 1.125rem; }
+  .closing-submit{ min-height: 96px; }
+  .closing-submit-t{ font-size: 2.4rem; }
+  .closing-fbody{ font-size: 1rem; }
+}
+
+/* ===== md 768〜 ===== */
+@media (min-width: 768px){
+  .closing-title{ font-size: min(4.4rem, calc((100vw - 2 * var(--g)) / 10.6)); }
+  .closing-ptitle{ font-size: 2rem; }
+  .closing-psub{ font-size: 1.3rem; }
+  .closing-income{ font-size: 1.55rem; }
+  .closing-lead{ font-size: 3.4rem; }
+  .f-row{ grid-template-columns: 11rem 1fr; column-gap: 24px; }
+  .f-label{ font-size: 1.4rem; }
+  .f-badge{ font-size: 0.95rem; padding: 2px 10px; }
+  .closing-push{ font-size: 2.4rem; }
+  .closing-submit-t{ font-size: 3rem; }
+}
+
+/* ===== lg 1024〜（見本: 見出し95px・約束の見出し46px・入力欄の高さ46px・送信ボタン934×136） ===== */
+@media (min-width: 1024px){
+  .closing-title{ font-size: 5.85rem; padding: 2.6rem 1.9rem 1rem; line-height: 1.12; letter-spacing: -0.03em; }
+  .closing-promise-bg{ padding: 1.8rem 1.9rem 1.5rem; }
+  .closing-promise{ gap: 2rem; padding: 0.4rem 0 1.4rem 2.1rem; }
+  .closing-promise li{ grid-template-columns: 4.6rem 1fr; column-gap: 1.6rem; }
+  .closing-circle{ width: 4.6rem; height: 4.6rem; font-size: 2.8rem; }
+  .closing-ptitle{ font-size: 3.05rem; line-height: 1.15; letter-spacing: -0.02em; }
+  .closing-psub{ font-size: 1.75rem; line-height: 1.3; }
+  .closing-income{ font-size: 2rem; margin-top: 1.1rem; white-space: nowrap; }
+  .closing-gn{ font-size: 1.95em; }
+  .closing-arrow{ width: 4.2rem; height: 4.4rem; margin-top: 1.2rem; }
+  .closing-lead{ font-size: 4.9rem; }
+  .closing-form{ padding: 1.8rem 2.8rem 3rem; }
+  .closing-ftitle{ font-size: 3.6rem; }
+  .f-row{ grid-template-columns: 14.6rem 1fr; margin-top: 1.05rem; }
+  .f-head{ justify-content: flex-start; gap: 1.6rem; }
+  .f-label{ font-size: 1.8rem; }
+  .f-badge{ font-size: 1.1rem; padding: 0.15rem 0.85rem; border-radius: 0.3rem; }
+  .f-fields{ gap: 1.1rem; }
+  .f-in{ height: 3rem; font-size: 1.6rem; padding: 0 1.2rem; }
+  .f-sel{ background-position: right 1.3rem center; background-size: 1rem 0.75rem; }
+  .f-slash{ font-size: 2.4rem; }
+  .f-radio{ font-size: 1.6rem; }
+  .closing-radio{ width: 1.85rem; height: 1.85rem; }
+  .f-gender .f-fields{ gap: 2.5rem; }
+  .closing-push{ font-size: 3.3rem; margin-top: 2.3rem; }
+  .closing-agree{ font-size: 1.5rem; }
+  .closing-submit{ min-height: 8.8rem; margin-top: 1.9rem; border-width: 5px; }
+  .closing-submit-t{ font-size: 4.3rem; }
+  .closing-foot{ padding: 1.4rem 2.6rem 1.6rem; }
+  .closing-fname{ font-size: 2.2rem; }
+  .closing-fbody{ font-size: 1.35rem; line-height: 1.55; }
+  .closing-copy{ font-size: 1.2rem; }
+}
+
+/* ===================== 案B（黒×黄）の見た目 2026-10-09 =====================
+   上は黒の面（約束の番号は黄色の四角・数字は黄色）。フォームは白地に黒の文字・灰色の枠の入力欄、送信は赤い四角のボタン。フッターは黒 */
+section[data-unit="closing"]{ background: var(--ink2); color: #fff; }
+.closing-title{ text-shadow: none; }
+.closing-title .yl{ color: var(--yellow); }
+.closing-promise{ border-bottom: 1px solid #5f6669; }
+.closing-circle{ background: var(--yellow); color: #111; border-radius: 0; font-style: italic; }
+.closing-psub{ color: #dfe1e2; }
+.closing-g{ color: var(--yellow); }
+.closing-gn{ font-style: italic; padding-right: 0.03em; }
+.closing-arrow{ background: var(--yellow); }
+/* フォーム */
+.closing-form{ background: var(--paper); color: #111; }
+.closing-ftitle{ display: inline-block; padding: 0 0.1em; background: linear-gradient(transparent 60%, var(--yellow) 60%, var(--yellow) 94%, transparent 94%); }
+.f-label{ color: #111; }
+.f-badge{ background: #111; color: #fff; border-radius: 2px; }
+.f-in{ background: #fff; border: 1.5px solid #9aa0a3; border-radius: 2px; color: #111; }
+.f-in::placeholder{ color: #7a8084; }
+.f-in:focus{ outline: 3px solid var(--yellow); outline-offset: 0; border-color: #111; }
+.f-sel{ background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10'%3E%3Cpolygon points='0,0 14,0 7,10' fill='%23111111'/%3E%3C/svg%3E") no-repeat right 12px center / 12px 9px; }
+.closing-radio{ border-color: #111; }
+.closing-radio:checked::after{ background: #111; }
+.closing-push{ color: #111; }
+.closing-agree{ color: #33383a; }
+.closing-submit{
+  position: relative;
+  border: 0; border-radius: 4px;
+  background: linear-gradient(108deg, var(--red) 0 74%, #e01a2d 74% 100%);
+  box-shadow: 0 6px 0 var(--red-d), 0 9px 14px rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+.closing-submit-t{ text-shadow: none; }
+/* 送信ボタン右端の白い「→」 */
+.closing-submit::before{ content: ""; position: absolute; right: 22px; top: 50%; width: 26px; height: 3px; margin-top: -1.5px; background: #fff; }
+.closing-submit::after{ content: ""; position: absolute; right: 22px; top: 50%; width: 12px; height: 12px; border-top: 3px solid #fff; border-right: 3px solid #fff; transform: translateY(-50%) rotate(45deg); }
+/* フッター */
+.closing-foot{ background: var(--ink); color: #fff; }
+.closing-fbody{ color: #cfd2d4; }
+.closing-copy{ color: #a9aeb1; }
+@media (min-width: 640px){
+  .closing-submit::before{ right: 34px; width: 36px; height: 4px; margin-top: -2px; }
+  .closing-submit::after{ right: 33px; width: 16px; height: 16px; border-width: 4px; }
+}
+@media (min-width: 1024px){
+  .closing-submit{ border: 0; box-shadow: 0 8px 0 var(--red-d), 0 12px 18px rgba(0, 0, 0, 0.25); }
+  .closing-submit::before{ right: 3rem; width: 3.4rem; height: 6px; margin-top: -3px; }
+  .closing-submit::after{ right: 2.9rem; width: 1.6rem; height: 1.6rem; border-width: 6px; }
+  .f-in{ border-width: 2px; }
+}
+/* 案B: 送信ボタンの文字を右の矢印とぶつからないよう少し左へ寄せる（スマホ） */
+.closing-submit{ padding: 0 54px 0 14px; }
+.closing-submit-t{ font-size: min(1.75rem, calc((100vw - 2 * var(--g) - 70px) / 8.6)); }
+@media (min-width: 640px){ .closing-submit{ padding: 0 80px; } .closing-submit-t{ font-size: 2.4rem; } }
+@media (min-width: 768px){ .closing-submit-t{ font-size: 3rem; } }
+@media (min-width: 1024px){ .closing-submit{ padding: 0 7rem; } .closing-submit-t{ font-size: 4.3rem; } }

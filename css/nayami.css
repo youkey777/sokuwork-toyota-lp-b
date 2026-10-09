@@ -1,0 +1,161 @@
+/* ===== nayami：こんな悩み、ありませんか？（写真3枚＋白い吹き出し）＋共感文＋下向き矢印 ===== */
+
+section[data-unit="nayami"]{
+  background: #052544;
+  color: #fcfcfc;
+  padding: 28px var(--g) 22px;
+  text-align: center;
+}
+
+.nayami-title{
+  font-size: min(2rem, calc((100vw - 2 * var(--g)) / 12.2));
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  font-feature-settings: "palt" 1;
+}
+
+.nayami-list{
+  list-style: none;
+  margin-top: 18px;
+  display: grid;
+  gap: 22px;
+}
+
+/* スマホ: 写真の下に吹き出し（しっぽは上向き） */
+.nayami-item{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.nayami-photo{
+  width: 100%;
+  /* 写真の右端に元の見本の吹き出しのしっぽが写り込んでいるので、スマホでは右端を少し切る */
+  aspect-ratio: 1.54;
+  object-fit: cover;
+  object-position: left center;
+  border-radius: 8px;
+}
+
+.nayami-bubble{
+  position: relative;
+  margin: -26px 14px 0;
+  padding: 14px 16px;
+  border-radius: 22px;
+  background: #fcfdfd;
+  box-shadow: 0 0 0 1px #02183f, 0 4px 0 #042b57;
+  color: #04213e;
+  font-size: min(1.5rem, calc((100vw - 2 * var(--g) - 60px) / 8.4));
+  font-weight: 900;
+  line-height: 1.35;
+  text-align: left;
+}
+
+/* 吹き出しのしっぽ */
+.nayami-bubble::before{
+  content: "";
+  position: absolute;
+  left: 34px;
+  top: -14px;
+  width: 26px;
+  height: 16px;
+  background: #fcfdfd;
+  clip-path: polygon(0 100%, 30% 0, 100% 100%);
+}
+
+.nayami-line{
+  display: block;
+  white-space: nowrap;
+}
+
+.nayami-body{
+  margin-top: 24px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+}
+
+.nayami-catch{
+  margin-top: 16px;
+  font-size: min(2rem, calc((100vw - 2 * var(--g)) / 13.4));
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  font-feature-settings: "palt" 1;
+}
+
+.nayami-arrow{
+  display: block;
+  width: 56px;
+  height: 36px;
+  margin: 12px auto 0;
+}
+
+.nayami-arrow-line{
+  fill: none;
+  stroke: #fcfcfc;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ===== sm 640〜: 写真を左、吹き出しを右に（しっぽは左向き） ===== */
+@media (min-width: 640px){
+  section[data-unit="nayami"]{ padding: 36px var(--g) 28px; }
+  .nayami-title{ font-size: 2.6rem; }
+  .nayami-list{ gap: 18px; margin-top: 22px; }
+  .nayami-item{ flex-direction: row; align-items: center; }
+  .nayami-photo{ width: 52%; flex: none; }
+  .nayami-bubble{ flex: 1; margin: 0 0 0 22px; padding: 18px 20px; font-size: 1.55rem; border-radius: 26px; }
+  .nayami-bubble::before{ left: -16px; top: calc(50% - 13px); width: 18px; height: 26px; clip-path: polygon(100% 0, 0 55%, 100% 100%); background: #fcfdfd; }
+  .nayami-body{ font-size: 1.3rem; margin-top: 30px; }
+  .nayami-catch{ font-size: 2.6rem; margin-top: 20px; }
+  .nayami-arrow{ width: 70px; height: 45px; }
+}
+
+/* ===== md 768〜 ===== */
+@media (min-width: 768px){
+  .nayami-title{ font-size: 3.6rem; }
+  .nayami-bubble{ font-size: 1.95rem; padding: 22px 20px 22px 24px; }
+  .nayami-body{ font-size: 1.6rem; }
+  .nayami-catch{ font-size: 3.6rem; }
+}
+
+/* ===== lg 1024〜（見本: 見出し76px・写真496幅・吹き出しの文字51px・共感文38px） ===== */
+@media (min-width: 1024px){
+  section[data-unit="nayami"]{ padding: 2rem 3.3rem 1.2rem 3rem; }
+  .nayami-title{ font-size: 4.75rem; letter-spacing: -0.04em; }
+  .nayami-list{ margin-top: 1.1rem; gap: 1.1rem; }
+  .nayami-photo{ width: 30rem; }
+  .nayami-bubble{ margin-left: 1.1rem; padding: 1.5rem 0.9rem 1.5rem 1.5rem; border-radius: 1.9rem; font-size: 3rem; line-height: 1.38; box-shadow: 0 0 0 1px #02183f, 4px 1px 0 1px #042b57, -4px 0 0 0 #052a51; }
+  .nayami-bubble::before{ left: -2.4rem; width: 2.6rem; height: 2rem; top: calc(50% - 1rem); }
+  .nayami-body{ font-size: 2.375rem; line-height: 1.5; margin-top: 2.4rem; letter-spacing: 0.03em; }
+  .nayami-catch{ font-size: 4.9rem; margin-top: 1.4rem; letter-spacing: -0.05em; }
+  .nayami-arrow{ width: 5.6rem; height: 3.6rem; margin-top: 1.3rem; }
+}
+
+/* 吹き出しは1行に収める（2026-10-09 発注主指示）。吹き出しの中身の幅に合わせて文字の大きさを決める。
+   一番長い「趣味のお金をもっと増やしたい」14字が入るよう 14.6 で割る。3つとも同じ大きさにそろう */
+.nayami-bubble{ container-type: inline-size; white-space: nowrap; -webkit-text-size-adjust: none; text-size-adjust: none; }
+.nayami-line{ display: inline; font-size: min(1em, calc(100cqi / 15.2)); }
+
+/* ===================== 案B（黒×黄）の見た目 2026-10-09 =====================
+   黒の面・白い四角の吹き出し（黄色の影）。共感の一文は黄色 */
+section[data-unit="nayami"]{ background: var(--ink2); color: #fff; }
+.nayami-title .yl{ color: var(--yellow); }
+.nayami-photo{ border-radius: 0; }
+.nayami-bubble{ border-radius: 0; background: #fff; color: #111; box-shadow: 5px 5px 0 var(--yellow); }
+.nayami-bubble::before{ background: #fff; }
+.nayami-body{ color: #e3e5e6; }
+.nayami-catch{ color: var(--yellow); }
+.nayami-arrow-line{ stroke: var(--yellow); }
+@media (min-width: 640px){
+  .nayami-bubble{ border-radius: 0; }
+  .nayami-bubble::before{ background: #fff; }
+}
+@media (min-width: 1024px){
+  .nayami-bubble{ border-radius: 0; box-shadow: 7px 7px 0 var(--yellow); }
+}

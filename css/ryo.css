@@ -1,0 +1,206 @@
+/* ===== ryo：気になる疑問 Q.住むところは？＋寮（すべて0円・個室の写真・設備の写真） ===== */
+
+section[data-unit="ryo"]{
+  background: #fdfdfd;
+  color: #06203d;
+  border-bottom: 2px solid #041c3e;
+}
+
+.ryo-head{
+  padding: 14px var(--g) 12px;
+  background: #0b2443;
+  border-top: 4px solid #01284c;
+  color: #fcfcfc;
+  text-align: center;
+}
+
+.ryo-head-title{
+  font-size: min(1.5rem, calc((100vw - 2 * var(--g)) / 14.6));
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  font-feature-settings: "palt" 1;
+}
+
+.ryo-head-q{
+  margin-top: 2px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.ryo-body{
+  padding: 20px var(--g) 26px;
+}
+
+/* 寮の家賃・水道費・光熱費 → すべて0円 */
+.ryo-free-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.ryo-chips{
+  list-style: none;
+  display: flex;
+  gap: 6px;
+}
+
+.ryo-chip{
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #0b2442;
+  color: #fcfcfc;
+  font-size: min(1.125rem, calc((100vw - 2 * var(--g) - 72px) / 10.4));
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.ryo-arrow-free{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ryo-arrow{
+  width: 36px;
+  height: 29px;
+  flex: none;
+}
+
+.ryo-arrow-shape{
+  fill: #0b2442;
+}
+
+.ryo-free{
+  display: flex;
+  align-items: baseline;
+  line-height: 1;
+  font-weight: 900;
+  color: #0b2442;
+}
+
+.ryo-free-text{
+  font-size: 2.6rem;
+  letter-spacing: -0.05em;
+}
+
+.ryo-free-zero{
+  font-size: 4.6rem;
+  margin-left: 6px;
+  color: #f5ae00;
+}
+
+.ryo-free-yen{
+  font-size: 2.6rem;
+  color: #f5ae00;
+}
+
+.ryo-sub{
+  margin-top: 22px;
+  font-size: 1.625rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.ryo-photo{
+  width: 100%;
+  margin-top: 10px;
+  aspect-ratio: 932 / 362;
+  object-fit: cover;
+}
+
+.ryo-photo--bath{
+  aspect-ratio: 932 / 346;
+}
+
+@media (max-width: 639px){
+  .ryo-photo, .ryo-photo--bath{ aspect-ratio: 3 / 2; }
+}
+
+.ryo-cap{
+  margin-top: 10px;
+  font-size: 1.0625rem;
+  font-weight: 900;
+  line-height: 1.55;
+}
+
+/* ===== sm 640〜: チップ・矢印・すべて0円を1行に ===== */
+@media (min-width: 640px){
+  .ryo-head{ padding: 16px var(--g) 14px; }
+  .ryo-head-title{ font-size: 2rem; }
+  .ryo-head-q{ font-size: 1.6rem; }
+  .ryo-body{ padding: 22px var(--g) 30px; }
+  .ryo-free-row{ flex-direction: row; justify-content: center; gap: 10px; }
+  .ryo-chip{ font-size: 1.15rem; padding: 8px 10px; }
+  .ryo-free-text{ font-size: 2.6rem; }
+  .ryo-free-zero{ font-size: 4.4rem; }
+  .ryo-free-yen{ font-size: 2.6rem; }
+  .ryo-sub{ font-size: 2rem; }
+  .ryo-cap{ font-size: 1.3rem; }
+}
+
+/* ===== md 768〜 ===== */
+@media (min-width: 768px){
+  .ryo-head-title{ font-size: 2.4rem; }
+  .ryo-head-q{ font-size: 1.9rem; }
+  .ryo-chip{ font-size: 1.5rem; padding: 10px 12px; }
+  .ryo-arrow{ width: 44px; height: 35px; }
+  .ryo-free-text{ font-size: 3.4rem; }
+  .ryo-free-zero{ font-size: 6rem; }
+  .ryo-free-yen{ font-size: 3.4rem; }
+  .ryo-sub{ font-size: 2.6rem; }
+  .ryo-cap{ font-size: 1.7rem; }
+}
+
+/* ===== lg 1024〜（見本: 帯の見出し50px・すべて78px・0は158px・小見出し52px・説明36px） ===== */
+@media (min-width: 1024px){
+  .ryo-head{ padding: 0.9rem 0 0.7rem; border-top-width: 5px; }
+  .ryo-head-title{ font-size: 3.1rem; letter-spacing: -0.03em; }
+  .ryo-head-q{ font-size: 2.5rem; margin-top: 0; }
+  .ryo-body{ padding: 2.6rem 2.9rem 1.2rem; }
+  .ryo-free-row{ justify-content: flex-start; gap: 0.5rem; }
+  .ryo-chip{ font-size: 2.25rem; padding: 0.6rem 1.1rem; }
+  .ryo-arrow-free{ gap: 0.3rem; }
+  .ryo-arrow{ width: 3.6rem; height: 2.9rem; margin-left: 0.2rem; }
+  .ryo-free-text{ font-size: 4.9rem; letter-spacing: -0.06em; }
+  .ryo-free-zero{ font-size: 8.6rem; margin-left: 1rem; }
+  .ryo-free-yen{ font-size: 5.3rem; }
+  .ryo-sub{ font-size: 3.25rem; margin-top: 1.2rem; }
+  .ryo-photo{ margin-top: 0.6rem; }
+  .ryo-cap{ font-size: 2.3rem; margin-top: 1.4rem; line-height: 1.3; }
+  .ryo-sub--etc{ margin-top: 2.6rem; }
+}
+
+/* 大浴場の写真（2026-10-08 差し替え。元は4:3。横長の枠では湯船と洗い場が入る位置で切り出す） */
+.ryo-photo--bath{ object-position: 50% 58%; }
+
+/* ===================== 案B（黒×黄）の見た目 2026-10-09 =====================
+   黒の面。「気になる疑問に…」は白い斜めの帯、Q. は黄色。すべて0円の0は黄色の極太 */
+section[data-unit="ryo"]{ background: var(--ink2); color: #fff; border-bottom: 0; }
+.ryo-head{ background: var(--ink2); border-top: 0; color: #fff; padding-top: 22px; }
+.ryo-head-title{ display: inline-block; padding: 0.12em 0.7em 0.14em; background: #fff; color: #111; transform: skewX(-8deg); }
+.ryo-head-q{ color: #fff; margin-top: 10px; font-size: min(2.1rem, calc((100vw - 2 * var(--g)) / 9.5)); }
+.ryo-head-q::first-letter{ color: var(--yellow); font-family: "Roboto", "Noto Sans JP", sans-serif; font-style: italic; font-weight: 900; font-size: 1.1em; }
+.ryo-chip{ background: transparent; border: 2px solid #fff; border-radius: 0; color: #fff; }
+.ryo-arrow-shape{ fill: var(--yellow); }
+.ryo-free{ color: #fff; }
+.ryo-free-zero, .ryo-free-yen{ color: var(--yellow); }
+.ryo-free-zero{ font-style: italic; padding-right: 0.04em; }
+.ryo-sub{ padding-left: 0.5em; border-left: 6px solid var(--yellow); line-height: 1.2; }
+.ryo-cap{ color: #fff; padding-bottom: 8px; border-bottom: 3px solid var(--yellow); }
+@media (min-width: 640px){
+  .ryo-head-q{ font-size: 2.4rem; }
+}
+@media (min-width: 768px){
+  .ryo-head-q{ font-size: 2.8rem; }
+}
+@media (min-width: 1024px){
+  .ryo-head{ padding: 2.2rem 0 0.4rem; border-top: 0; }
+  .ryo-head-q{ font-size: 3.6rem; margin-top: 1rem; }
+  .ryo-sub{ border-left-width: 10px; }
+  .ryo-chip{ padding: 0.6rem 0.85rem; }
+  .ryo-cap{ border-bottom-width: 4px; padding-bottom: 0.8rem; }
+}
