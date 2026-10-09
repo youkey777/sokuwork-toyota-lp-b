@@ -404,3 +404,5 @@ section[data-unit="hero"]{ background: var(--ink); color: #fff; display: flow-ro
 @media (min-width: 768px){ .hero-s3 .s3b{ font-size: 5.4rem; } }
 @media (min-width: 1024px){ .hero-s3 .s3b{ font-size: 6.6rem; } }
 @media (min-width: 1536px){ .hero-visual{ height: clamp(26rem, calc(100svh - 6rem - 17.4rem), 50.625rem); } }
+/* 「寮費」の行が親の大きな文字の高さで下がらないよう、親の文字の大きさを0に（2語は各自の大きさを持つ） */
+.hero-stats .hero-s3{ font-size: 0; }
