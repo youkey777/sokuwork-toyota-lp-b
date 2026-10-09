@@ -406,3 +406,9 @@ section[data-unit="hero"]{ background: var(--ink); color: #fff; display: flow-ro
 @media (min-width: 1536px){ .hero-visual{ height: clamp(26rem, calc(100svh - 6rem - 17.4rem), 50.625rem); } }
 /* 「寮費」の行が親の大きな文字の高さで下がらないよう、親の文字の大きさを0に（2語は各自の大きさを持つ） */
 .hero-stats .hero-s3{ font-size: 0; }
+/* 検品の直し: 360〜412 で「万円」が箱の右下角に詰まらないよう、数字を少し小さくして内側に余白を残す */
+@media (max-width: 639px){
+  .hero-s-num{ font-size: min(14.4vw, 3.8rem); }
+  .hero-stats li, .hero-stats li + li{ padding: 6px 7px 6px; }
+  .hero-s-unit{ margin-right: 0.15em; }
+}

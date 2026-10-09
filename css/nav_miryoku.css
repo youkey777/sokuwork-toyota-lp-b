@@ -292,3 +292,22 @@ section[data-unit="nav_miryoku"]{ background: var(--paper); border-top: 0; }
   .nav_miryoku-band::before{ display: block; background: linear-gradient(to right, rgba(30, 36, 38, 0.7) 0%, rgba(30, 36, 38, 0.35) 48%, rgba(30, 36, 38, 0) 66%); }
   .nav_miryoku-r + .nav_miryoku-r{ padding-top: 0.6rem; }
 }
+
+/* 検品の直し 2026-10-09: PC で文字の列が人物（帽子・顔・腕）に重ならないよう、
+   文字の列を左の約6割に収め（見出し・数字を少し小さく、3行目は2段に）、写真を右へ60px寄せ、文字側の黒い面を広げる */
+@media (min-width: 1024px){
+  .nav_miryoku-band{ background-position: right -60px top; }
+  .nav_miryoku-band::before{ background: linear-gradient(to right, rgba(30, 36, 38, 0.86) 0%, rgba(30, 36, 38, 0.66) 50%, rgba(30, 36, 38, 0) 68%); }
+  .nav_miryoku-head{ padding-right: 1.5rem; }
+  .nav_miryoku-band-title{ font-size: 3.7rem; }
+  .nav_miryoku-band-sub{ font-size: 2.3rem; }
+  .nav_miryoku-num{ font-size: 7.6rem; }
+  .nav_miryoku-unit{ font-size: 3.4rem; }
+  .nav_miryoku-ijo{ font-size: 2.4rem; }
+  .nav_miryoku-r2 .nav_miryoku-label{ font-size: 2.2rem; }
+  .nav_miryoku-r2 .nav_miryoku-num{ font-size: 7rem; }
+  .nav_miryoku-r3{ flex-direction: column; align-items: flex-start; row-gap: 0.1rem; }
+  .nav_miryoku-r3 .nav_miryoku-num{ font-size: 4.2rem; }
+  .nav_miryoku-plus{ align-self: flex-start; top: 0.15em; margin: 0.1em 0 0.1em 0.15em; font-size: 2.4rem; }
+}
+@media (min-width: 1024px){ .nav_miryoku-rows{ max-width: 40rem; } }
