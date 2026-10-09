@@ -1,5 +1,4 @@
 /* ===== sim：入社1年目の給与シミュレーション（縦の時間軸＋金の数字＋紺のカード） ===== */
-
 section[data-unit="sim"]{
   background: #fdfdfd;
   padding: 30px var(--g) 28px;
@@ -101,8 +100,7 @@ section[data-unit="sim"]{
   font-weight: 900;
 }
 
-.sim-val,
-.sim-cval{
+.sim-val, .sim-cval{
   white-space: nowrap;
   font-weight: 900;
   letter-spacing: -0.01em;
@@ -230,96 +228,299 @@ section[data-unit="sim"]{
 
 /* ===== sm 640〜: 月の名前を左、金額を右の2列に ===== */
 @media (min-width: 640px){
-  section[data-unit="sim"]{ padding: 40px var(--g) 36px; }
-  .sim-title{ font-size: 2.1rem; }
-  .sim-badge{ font-size: 1rem; }
-  .sim-steps{ padding-left: 40px; }
-  .sim-m::before{ left: -40px; width: 26px; height: 26px; }
-  .sim-step{ align-items: baseline; }
-  .sim-row{ align-items: baseline; }
-  .sim-steps::before{ left: 11px; width: 5px; }
-  .sim-step{ display: grid; grid-template-columns: 8.5rem 1fr; column-gap: 12px; }
-  .sim-m{ font-size: 1.75rem; line-height: 1.6; }
-  .sim-row{ justify-content: flex-start; display: grid; grid-template-columns: 7rem 1fr; }
-  .sim-label{ font-size: 1.375rem; line-height: 1.3; }
-  .sim-val .sim-n{ font-size: 2.9rem; }
-  .sim-val .sim-u{ font-size: 1.9rem; }
-  .sim-row--plus .sim-val .sim-n{ font-size: 2.8rem; }
-  .sim-mid{ font-size: 1.25rem; padding-left: 0; }
-  .sim-card{ padding: 18px 24px 20px; }
-  .sim-clabel{ font-size: 1.2rem; }
-  .sim-cval .sim-n{ font-size: 2rem; }
-  .sim-cval .sim-u{ font-size: 1.3rem; }
-  .sim-crow--main .sim-clabel{ font-size: 1.5rem; }
-  .sim-crow--main .sim-n{ font-size: 2.9rem; }
-  .sim-crow--main .sim-u{ font-size: 1.8rem; }
-  .sim-total-label{ font-size: 2.2rem; }
-  .sim-total-n{ font-size: 3.8rem; }
-  .sim-total-u{ font-size: 1.7rem; }
-  .sim-row--plus{ grid-template-columns: auto 1fr; column-gap: 1rem; }
-  .sim-note{ font-size: 1.1rem; }
+  section[data-unit="sim"]{
+    padding: 40px var(--g) 36px;
+  }
+  .sim-title{
+    font-size: 2.1rem;
+  }
+  .sim-badge{
+    font-size: 1rem;
+  }
+  .sim-steps{
+    padding-left: 40px;
+  }
+  .sim-m::before{
+    left: -40px;
+    width: 26px;
+    height: 26px;
+  }
+  .sim-step{
+    align-items: baseline;
+  }
+  .sim-row{
+    align-items: baseline;
+  }
+  .sim-steps::before{
+    left: 11px;
+    width: 5px;
+  }
+  .sim-step{
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    column-gap: 12px;
+  }
+  .sim-m{
+    font-size: 1.75rem;
+    line-height: 1.6;
+  }
+  .sim-row{
+    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+  }
+  .sim-label{
+    font-size: 1.375rem;
+    line-height: 1.3;
+  }
+  .sim-val .sim-n{
+    font-size: 2.9rem;
+  }
+  .sim-val .sim-u{
+    font-size: 1.9rem;
+  }
+  .sim-row--plus .sim-val .sim-n{
+    font-size: 2.8rem;
+  }
+  .sim-mid{
+    font-size: 1.25rem;
+    padding-left: 0;
+  }
+  .sim-card{
+    padding: 18px 24px 20px;
+  }
+  .sim-clabel{
+    font-size: 1.2rem;
+  }
+  .sim-cval .sim-n{
+    font-size: 2rem;
+  }
+  .sim-cval .sim-u{
+    font-size: 1.3rem;
+  }
+  .sim-crow--main .sim-clabel{
+    font-size: 1.5rem;
+  }
+  .sim-crow--main .sim-n{
+    font-size: 2.9rem;
+  }
+  .sim-crow--main .sim-u{
+    font-size: 1.8rem;
+  }
+  .sim-total-label{
+    font-size: 2.2rem;
+  }
+  .sim-total-n{
+    font-size: 3.8rem;
+  }
+  .sim-total-u{
+    font-size: 1.7rem;
+  }
+  .sim-row--plus{
+    grid-template-columns: auto 1fr;
+    column-gap: 1rem;
+  }
+  .sim-note{
+    font-size: 1.1rem;
+  }
 }
 
 /* ===== md 768〜 ===== */
 @media (min-width: 768px){
-  .sim-title{ font-size: 2.6rem; }
-  .sim-step{ grid-template-columns: 10rem 1fr; }
-  .sim-m{ font-size: 2rem; }
-  .sim-row{ grid-template-columns: 8rem 1fr; }
-  .sim-row--plus{ grid-template-columns: auto 1fr; }
-  .sim-label{ font-size: 1.6rem; }
-  .sim-val .sim-n{ font-size: 3.8rem; }
-  .sim-val .sim-u{ font-size: 2.2rem; }
-  .sim-row--plus .sim-val .sim-n{ font-size: 3.3rem; }
-  .sim-card{ padding: 20px 28px 22px; }
-  .sim-crow{ display: grid; grid-template-columns: 1fr auto; }
-  .sim-clabel{ font-size: 1.45rem; }
-  .sim-cval .sim-n{ font-size: 2.4rem; }
-  .sim-cval .sim-u{ font-size: 1.5rem; }
-  .sim-crow--main .sim-clabel{ font-size: 1.8rem; }
-  .sim-crow--main .sim-n{ font-size: 3.5rem; }
-  .sim-crow--main .sim-u{ font-size: 2.2rem; }
-  .sim-total{ justify-content: flex-start; column-gap: 20px; }
-  .sim-total-label{ font-size: 2.4rem; }
-  .sim-total-n{ font-size: 4.4rem; }
-  .sim-total-u{ font-size: 2rem; }
+  .sim-title{
+    font-size: 2.6rem;
+  }
+  .sim-step{
+    grid-template-columns: 10rem 1fr;
+  }
+  .sim-m{
+    font-size: 2rem;
+  }
+  .sim-row{
+    grid-template-columns: 8rem 1fr;
+  }
+  .sim-row--plus{
+    grid-template-columns: auto 1fr;
+  }
+  .sim-label{
+    font-size: 1.6rem;
+  }
+  .sim-val .sim-n{
+    font-size: 3.8rem;
+  }
+  .sim-val .sim-u{
+    font-size: 2.2rem;
+  }
+  .sim-row--plus .sim-val .sim-n{
+    font-size: 3.3rem;
+  }
+  .sim-card{
+    padding: 20px 28px 22px;
+  }
+  .sim-crow{
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+  .sim-clabel{
+    font-size: 1.45rem;
+  }
+  .sim-cval .sim-n{
+    font-size: 2.4rem;
+  }
+  .sim-cval .sim-u{
+    font-size: 1.5rem;
+  }
+  .sim-crow--main .sim-clabel{
+    font-size: 1.8rem;
+  }
+  .sim-crow--main .sim-n{
+    font-size: 3.5rem;
+  }
+  .sim-crow--main .sim-u{
+    font-size: 2.2rem;
+  }
+  .sim-total{
+    justify-content: flex-start;
+    column-gap: 20px;
+  }
+  .sim-total-label{
+    font-size: 2.4rem;
+  }
+  .sim-total-n{
+    font-size: 4.4rem;
+  }
+  .sim-total-u{
+    font-size: 2rem;
+  }
 }
 
 /* ===== lg 1024〜（見本: 見出し56px・金額の数字60〜80px・カード幅約690） ===== */
 @media (min-width: 1024px){
-  section[data-unit="sim"]{ padding: 3.6rem 3.4rem 2.4rem 2.8rem; }
-  .sim-title{ font-size: 3.5rem; letter-spacing: -0.02em; }
-  .sim-head{ align-items: flex-end; margin-right: 2.4rem; }
-  .sim-badge{ font-size: 1.45rem; padding: 0.3rem 1.3rem; margin-top: 0.2rem; }
-  .sim-steps{ margin-top: -0.4rem; padding-left: 3.4rem; }
-  .sim-steps::before{ left: 1.05rem; width: 0.4rem; top: 2.6rem; bottom: 2.4rem; }
-  .sim-step{ grid-template-columns: 12rem 1fr; padding: 0.7rem 0; align-items: baseline; }
-  .sim-m::before{ left: -3.4rem; width: 2.15rem; height: 2.15rem; }
-  .sim-m{ font-size: 2.6rem; line-height: 1.5; }
-  .sim-row{ grid-template-columns: 10.8rem 1fr; align-items: baseline; }
-  .sim-label{ font-size: 2.2rem; line-height: 1.3; }
-  .sim-val .sim-n{ font-size: 5.3rem; }
-  .sim-val .sim-u{ font-size: 3.1rem; }
-  .sim-step:first-child .sim-val .sim-n{ font-size: 5rem; }
-  .sim-step:first-child .sim-row{ grid-template-columns: 9.4rem 1fr; }
-  .sim-row--plus{ grid-template-columns: 19.4rem 1fr; }
-  .sim-row--plus .sim-val .sim-n{ font-size: 4.7rem; }
-  .sim-mid{ font-size: 1.95rem; padding: 0.2rem 0 0.8rem; margin-left: -0.4rem; }
-  .sim-card{ margin-top: 0; padding: 1.3rem 1.6rem 1.3rem 1.6rem; border-radius: 0.75rem; }
-  .sim-clabel{ font-size: 1.95rem; }
-  .sim-cval .sim-n{ font-size: 3.2rem; }
-  .sim-cval .sim-u{ font-size: 2rem; }
-  .sim-crow{ grid-template-columns: 17.4rem 1fr; align-items: baseline; line-height: 1.15; }
-  .sim-crow + .sim-crow{ margin-top: 0.2rem; }
-  .sim-crow--main{ grid-template-columns: 1fr auto; padding-bottom: 0.6rem; margin-bottom: 0.8rem; }
-  .sim-crow--main .sim-clabel{ font-size: 2.2rem; }
-  .sim-crow--main .sim-n{ font-size: 4.2rem; }
-  .sim-crow--main .sim-u{ font-size: 2.5rem; }
-  .sim-total{ column-gap: 1.6rem; margin-top: 0.4rem; flex-wrap: nowrap; }
-  .sim-total-label{ font-size: 4.1rem; }
-  .sim-total-n{ font-size: 6.9rem; }
-  .sim-total-u{ font-size: 3rem; }
-  .sim-note{ font-size: 1.4rem; margin-top: 0.6rem; }
+  section[data-unit="sim"]{
+    padding: 3.6rem 3.4rem 2.4rem 2.8rem;
+  }
+  .sim-title{
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+  }
+  .sim-head{
+    align-items: flex-end;
+    margin-right: 2.4rem;
+  }
+  .sim-badge{
+    font-size: 1.45rem;
+    padding: 0.3rem 1.3rem;
+    margin-top: 0.2rem;
+  }
+  .sim-steps{
+    margin-top: -0.4rem;
+    padding-left: 3.4rem;
+  }
+  .sim-steps::before{
+    left: 1.05rem;
+    width: 0.4rem;
+    top: 2.6rem;
+    bottom: 2.4rem;
+  }
+  .sim-step{
+    grid-template-columns: 12rem 1fr;
+    padding: 0.7rem 0;
+    align-items: baseline;
+  }
+  .sim-m::before{
+    left: -3.4rem;
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+  .sim-m{
+    font-size: 2.6rem;
+    line-height: 1.5;
+  }
+  .sim-row{
+    grid-template-columns: 10.8rem 1fr;
+    align-items: baseline;
+  }
+  .sim-label{
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+  .sim-val .sim-n{
+    font-size: 5.3rem;
+  }
+  .sim-val .sim-u{
+    font-size: 3.1rem;
+  }
+  .sim-step:first-child .sim-val .sim-n{
+    font-size: 5rem;
+  }
+  .sim-step:first-child .sim-row{
+    grid-template-columns: 9.4rem 1fr;
+  }
+  .sim-row--plus{
+    grid-template-columns: 19.4rem 1fr;
+  }
+  .sim-row--plus .sim-val .sim-n{
+    font-size: 4.7rem;
+  }
+  .sim-mid{
+    font-size: 1.95rem;
+    padding: 0.2rem 0 0.8rem;
+    margin-left: -0.4rem;
+  }
+  .sim-card{
+    margin-top: 0;
+    padding: 1.3rem 1.6rem 1.3rem 1.6rem;
+    border-radius: 0.75rem;
+  }
+  .sim-clabel{
+    font-size: 1.95rem;
+  }
+  .sim-cval .sim-n{
+    font-size: 3.2rem;
+  }
+  .sim-cval .sim-u{
+    font-size: 2rem;
+  }
+  .sim-crow{
+    grid-template-columns: 17.4rem 1fr;
+    align-items: baseline;
+    line-height: 1.15;
+  }
+  .sim-crow + .sim-crow{
+    margin-top: 0.2rem;
+  }
+  .sim-crow--main{
+    grid-template-columns: 1fr auto;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+  .sim-crow--main .sim-clabel{
+    font-size: 2.2rem;
+  }
+  .sim-crow--main .sim-n{
+    font-size: 4.2rem;
+  }
+  .sim-crow--main .sim-u{
+    font-size: 2.5rem;
+  }
+  .sim-total{
+    column-gap: 1.6rem;
+    margin-top: 0.4rem;
+    flex-wrap: nowrap;
+  }
+  .sim-total-label{
+    font-size: 4.1rem;
+  }
+  .sim-total-n{
+    font-size: 6.9rem;
+  }
+  .sim-total-u{
+    font-size: 3rem;
+  }
+  .sim-note{
+    font-size: 1.4rem;
+    margin-top: 0.6rem;
+  }
 }
 
 /* ===== 12ヶ月目: 年間のお給料 560万円！！（総額と同じ強さの金の大きな数字。紺の面に置く） ===== */
@@ -330,79 +531,232 @@ section[data-unit="sim"]{
   background: #0a2544;
   color: #fbfcfd;
 }
+
 .sim-year-label{
   font-size: 1.375rem;
   font-weight: 900;
   line-height: 1.3;
   color: #fcfdfd;
 }
+
 .sim-year-val{
   margin-top: 2px;
   line-height: 1.05;
   text-align: right;
   white-space: nowrap;
 }
+
 .sim-year-n{
   font-size: 3.6rem;
   font-weight: 900;
   letter-spacing: -0.03em;
   color: #fed00d;
 }
+
 .sim-year-u{
   font-size: 1.6rem;
   font-weight: 900;
   color: #fcd00b;
 }
+
+/* 給与シミュレーション: 画面幅 sm 640px 以上 での大きさ・組みの調整 */
 @media (min-width: 640px){
-  .sim-year{ padding: 16px 24px 18px; }
-  .sim-year-label{ font-size: 1.7rem; }
-  .sim-year-n{ font-size: 4.4rem; }
-  .sim-year-u{ font-size: 2rem; }
+  .sim-year{
+    padding: 16px 24px 18px;
+  }
+  .sim-year-label{
+    font-size: 1.7rem;
+  }
+  .sim-year-n{
+    font-size: 4.4rem;
+  }
+  .sim-year-u{
+    font-size: 2rem;
+  }
 }
+
+/* 給与シミュレーション: 画面幅 md 768px 以上 での大きさ・組みの調整 */
 @media (min-width: 768px){
-  .sim-year{ display: flex; align-items: baseline; justify-content: space-between; column-gap: 20px; flex-wrap: wrap; padding: 18px 28px 20px; }
-  .sim-year-label{ font-size: 2rem; }
-  .sim-year-n{ font-size: 5rem; }
-  .sim-year-u{ font-size: 2.2rem; }
+  .sim-year{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    padding: 18px 28px 20px;
+  }
+  .sim-year-label{
+    font-size: 2rem;
+  }
+  .sim-year-n{
+    font-size: 5rem;
+  }
+  .sim-year-u{
+    font-size: 2.2rem;
+  }
 }
+
+/* 給与シミュレーション: 画面幅 lg 1024px 以上 での大きさ・組みの調整 */
 @media (min-width: 1024px){
-  .sim-year{ margin-top: 0; padding: 1.2rem 1.6rem 1.3rem; border-radius: 0.75rem; column-gap: 1.6rem; }
-  .sim-year-label{ font-size: 2.8rem; }
-  .sim-year-n{ font-size: 6.9rem; }
-  .sim-year-u{ font-size: 3rem; }
+  .sim-year{
+    margin-top: 0;
+    padding: 1.2rem 1.6rem 1.3rem;
+    border-radius: 0.75rem;
+    column-gap: 1.6rem;
+  }
+  .sim-year-label{
+    font-size: 2.8rem;
+  }
+  .sim-year-n{
+    font-size: 6.9rem;
+  }
+  .sim-year-u{
+    font-size: 3rem;
+  }
 }
 
 /* ===================== 案B（黒×黄）の見た目 2026-10-09 =====================
    白地・黒の太線。金額は黒の極太に黄色のマーカー、7・13ヶ月目は黒の太枠の白いカード＋黄色の「総額」帯、12ヶ月目は黒の面に黄色の数字 */
-section[data-unit="sim"]{ background: var(--paper); color: #111; }
-.sim-title{ color: #111; display: inline-block; padding-bottom: 6px; background: linear-gradient(var(--yellow), var(--yellow)) left bottom / 100% 6px no-repeat; }
-.sim-steps::before{ background: #111; }
-.sim-m::before{ background: var(--yellow); border: 3px solid #111; border-radius: 0; transform: translateY(-50%) rotate(45deg); }
-.sim-m{ color: #111; }
-.sim-label{ color: #111; }
-.sim-val{ justify-self: start; width: fit-content; color: #111; background: linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 94%, transparent 94%); padding: 0 0.1em; }
-.sim-mid{ color: #4a4f52; }
-.sim-card{ background: var(--paper); color: #111; border: 3px solid #111; border-radius: 0; padding-bottom: 0; overflow: hidden; }
-.sim-cval{ color: #111; }
-.sim-crow--main{ border-bottom: 2px solid #111; }
-.sim-crow--main .sim-cval{ background: linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 94%, transparent 94%); padding: 0 0.08em; }
-.sim-total{ margin: 10px -16px 0; padding: 6px 16px 8px; background: var(--yellow); }
-.sim-total-label, .sim-total-n, .sim-total-u{ color: #111; }
-.sim-total-n{ font-family: "Roboto", "Noto Sans JP", sans-serif; font-style: italic; padding-right: 0.05em; }
-.sim-year{ background: var(--ink); border-radius: 0; color: #fff; box-shadow: 6px 6px 0 var(--yellow); }
-.sim-year-label{ color: #fff; }
-.sim-year-n{ color: var(--yellow); font-family: "Roboto", "Noto Sans JP", sans-serif; font-style: italic; padding-right: 0.05em; }
-.sim-year-u{ color: var(--yellow); }
-.sim-note{ color: #4a4f52; }
+section[data-unit="sim"]{
+  background: var(--paper);
+  color: #111;
+}
+
+.sim-title{
+  color: #111;
+  display: inline-block;
+  padding-bottom: 6px;
+  background: linear-gradient(var(--yellow), var(--yellow)) left bottom / 100% 6px no-repeat;
+}
+
+.sim-steps::before{
+  background: #111;
+}
+
+.sim-m::before{
+  background: var(--yellow);
+  border: 3px solid #111;
+  border-radius: 0;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.sim-m{
+  color: #111;
+}
+
+.sim-label{
+  color: #111;
+}
+
+.sim-val{
+  justify-self: start;
+  width: fit-content;
+  color: #111;
+  background: linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 94%, transparent 94%);
+  padding: 0 0.1em;
+}
+
+.sim-mid{
+  color: #4a4f52;
+}
+
+.sim-card{
+  background: var(--paper);
+  color: #111;
+  border: 3px solid #111;
+  border-radius: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.sim-cval{
+  color: #111;
+}
+
+.sim-crow--main{
+  border-bottom: 2px solid #111;
+}
+
+.sim-crow--main .sim-cval{
+  background: linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 94%, transparent 94%);
+  padding: 0 0.08em;
+}
+
+.sim-total{
+  margin: 10px -16px 0;
+  padding: 6px 16px 8px;
+  background: var(--yellow);
+}
+
+.sim-total-label, .sim-total-n, .sim-total-u{
+  color: #111;
+}
+
+.sim-total-n{
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  font-style: italic;
+  padding-right: 0.05em;
+}
+
+.sim-year{
+  background: var(--ink);
+  border-radius: 0;
+  color: #fff;
+  box-shadow: 6px 6px 0 var(--yellow);
+}
+
+.sim-year-label{
+  color: #fff;
+}
+
+.sim-year-n{
+  color: var(--yellow);
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  font-style: italic;
+  padding-right: 0.05em;
+}
+
+.sim-year-u{
+  color: var(--yellow);
+}
+
+.sim-note{
+  color: #4a4f52;
+}
+
+/* 給与シミュレーション: 画面幅 sm 640px 以上 での大きさ・組みの調整 */
 @media (min-width: 640px){
-  .sim-total{ margin: 12px -24px 0; padding: 8px 24px 10px; }
+  .sim-total{
+    margin: 12px -24px 0;
+    padding: 8px 24px 10px;
+  }
 }
+
+/* 給与シミュレーション: 画面幅 md 768px 以上 での大きさ・組みの調整 */
 @media (min-width: 768px){
-  .sim-total{ margin: 12px -28px 0; padding: 8px 28px 10px; }
+  .sim-total{
+    margin: 12px -28px 0;
+    padding: 8px 28px 10px;
+  }
 }
+
+/* 給与シミュレーション: 画面幅 lg 1024px 以上 での大きさ・組みの調整 */
 @media (min-width: 1024px){
-  .sim-card{ border-radius: 0; border-width: 4px; padding-bottom: 0; }
-  .sim-total{ margin: 0.8rem -1.6rem 0; padding: 0.4rem 1.6rem 0.6rem; }
-  .sim-year{ border-radius: 0; box-shadow: 8px 8px 0 var(--yellow); }
-  .sim-title{ background-size: 100% 8px; padding-bottom: 0.6rem; }
+  .sim-card{
+    border-radius: 0;
+    border-width: 4px;
+    padding-bottom: 0;
+  }
+  .sim-total{
+    margin: 0.8rem -1.6rem 0;
+    padding: 0.4rem 1.6rem 0.6rem;
+  }
+  .sim-year{
+    border-radius: 0;
+    box-shadow: 8px 8px 0 var(--yellow);
+  }
+  .sim-title{
+    background-size: 100% 8px;
+    padding-bottom: 0.6rem;
+  }
 }

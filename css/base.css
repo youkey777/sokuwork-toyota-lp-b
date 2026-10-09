@@ -2,18 +2,26 @@
    モバイルファースト。区切りは Tailwind 標準の5つ:
    sm 640px / md 768px / lg 1024px / xl 1280px / 2xl 1536px
    大きさは rem で書き、2xl だけ html の文字の基準を 16px→18px に上げて一回り大きく組む（縮小・拡大の変形は使わない）。 */
-
 :root{
   /* 案B（黒×黄）の色。見本の画像から実測（2026-10-09） */
-  --ink: #171c1e;           /* 黒の面（数字の箱・応募ボタンの帯） */
-  --ink2: #1e2426;          /* 黒の面（ヘッダー・明るめの黒） */
-  --ink3: #121618;          /* 黒の面（一番暗い） */
-  --yellow: #fdde03;        /* アクセントの黄色（数字・マーカー・ラベル） */
-  --red: #d40216;           /* 応募ボタンの赤 */
-  --red-d: #a3000f;         /* 応募ボタンの影 */
-  --paper: #ffffff;         /* 白の面 */
-  --gray: #f1f2f2;          /* 薄い灰色の面 */
-  --text: #16191b;          /* 白地の上の文字 */
+  --ink: #171c1e;
+  /* 黒の面（数字の箱・応募ボタンの帯） */
+  --ink2: #1e2426;
+  /* 黒の面（ヘッダー・明るめの黒） */
+  --ink3: #121618;
+  /* 黒の面（一番暗い） */
+  --yellow: #fdde03;
+  /* アクセントの黄色（数字・マーカー・ラベル） */
+  --red: #d40216;
+  /* 応募ボタンの赤 */
+  --red-d: #a3000f;
+  /* 応募ボタンの影 */
+  --paper: #ffffff;
+  /* 白の面 */
+  --gray: #f1f2f2;
+  /* 薄い灰色の面 */
+  --text: #16191b;
+  /* 白地の上の文字 */
   --white: #ffffff;
   /* 斜めの境目の高さ */
   --sl: clamp(22px, 6vw, 64px);
@@ -22,14 +30,36 @@
   /* 本体の列の幅の上限 */
   --col: 1024px;
 }
-@media (min-width: 640px){ :root{ --g: 24px; } }
-@media (min-width: 768px){ :root{ --g: 32px; } }
-@media (min-width: 1024px){ :root{ --g: 40px; } }
-@media (min-width: 1536px){ :root{ --col: 1152px; } }
 
-*,
-*::before,
-*::after{
+/* 全体の土台: 画面幅 sm 640px 以上 での大きさ・組みの調整 */
+@media (min-width: 640px){
+  :root{
+    --g: 24px;
+  }
+}
+
+/* 全体の土台: 画面幅 md 768px 以上 での大きさ・組みの調整 */
+@media (min-width: 768px){
+  :root{
+    --g: 32px;
+  }
+}
+
+/* 全体の土台: 画面幅 lg 1024px 以上 での大きさ・組みの調整 */
+@media (min-width: 1024px){
+  :root{
+    --g: 40px;
+  }
+}
+
+/* 全体の土台: 画面幅 2xl 1536px 以上 での大きさ・組みの調整 */
+@media (min-width: 1536px){
+  :root{
+    --col: 1152px;
+  }
+}
+
+*, *::before, *::after{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -40,7 +70,13 @@ html{
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
 }
-@media (min-width: 1536px){ html{ font-size: 18px; } }
+
+/* 全体の土台: 画面幅 2xl 1536px 以上 での大きさ・組みの調整 */
+@media (min-width: 1536px){
+  html{
+    font-size: 18px;
+  }
+}
 
 body{
   font-family: "Noto Sans JP", sans-serif;
@@ -59,12 +95,19 @@ body{
   overflow: hidden;
   background: var(--paper);
 }
+
+/* 全体の土台: 画面幅 xl 1280px 以上 での大きさ・組みの調整 */
 @media (min-width: 1280px){
-  .lp{ box-shadow: 0 0 40px rgba(0, 0, 0, 0.35); }
+  .lp{
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+  }
 }
+
 /* 1024以上は見本と同じく約物（、。「」など）を詰めて組む */
 @media (min-width: 1024px){
-  .lp{ font-feature-settings: "palt" 1; }
+  .lp{
+    font-feature-settings: "palt" 1;
+  }
 }
 
 section[data-unit]{
@@ -84,23 +127,44 @@ a{
   touch-action: manipulation;
 }
 
-button,
-input,
-select{
+button, input, select{
   font: inherit;
   color: inherit;
 }
 
 /* 共通の部品 */
-.in{ padding-inline: var(--g); }        /* 左右の余白 */
-.nw{ white-space: nowrap; }             /* 折り返さない（数字・語のかたまり） */
-.ib{ display: inline-block; }           /* 語のかたまり単位で折り返す */
-.num{ font-family: "Roboto", "Noto Sans JP", sans-serif; }
-.jp-tight{ font-feature-settings: "palt" 1; }
+.in{
+  padding-inline: var(--g);
+}
+
+/* 左右の余白 */
+.nw{
+  white-space: nowrap;
+}
+
+/* 折り返さない（数字・語のかたまり） */
+.ib{
+  display: inline-block;
+}
+
+/* 語のかたまり単位で折り返す */
+.num{
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+}
+
+.jp-tight{
+  font-feature-settings: "palt" 1;
+}
+
 /* 文の途中で変に折れないよう、日本語は文節で折り返す（対応ブラウザのみ） */
-h1, h2, h3, h4, summary, .ib{ word-break: auto-phrase; }
+h1, h2, h3, h4, summary, .ib{
+  word-break: auto-phrase;
+}
+
 /* 段落の最後の行に1〜2文字だけ残る折り返しを避ける（対応ブラウザのみ） */
-p, dd, li{ text-wrap: pretty; }
+p, dd, li{
+  text-wrap: pretty;
+}
 
 /* 長めの本文は文節の切れ目（build.py が BudouX で入れた <wbr>）でだけ折り返す。
    word-break: auto-phrase は iPhone の Safari で効かないので使わない。収まらない長い語だけは overflow-wrap で救う。 */
@@ -109,13 +173,25 @@ p, dd, li{ text-wrap: pretty; }
   overflow-wrap: anywhere;
 }
 
-
 /* ===== 案B（黒×黄）の共通部品 ===== */
 /* 数字は極太の斜体（見本の「560」「100」と同じ） */
-.it{ font-family: "Roboto", "Noto Sans JP", sans-serif; font-style: italic; font-weight: 900; }
+.it{
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  font-style: italic;
+  font-weight: 900;
+}
+
 /* 黄色のマーカー（文字の下半分に黄色の帯） */
-.mk{ background: linear-gradient(transparent 52%, var(--yellow) 52%, var(--yellow) 92%, transparent 92%); padding: 0 0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-.yl{ color: var(--yellow); }
+.mk{
+  background: linear-gradient(transparent 52%, var(--yellow) 52%, var(--yellow) 92%, transparent 92%);
+  padding: 0 0.06em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.yl{
+  color: var(--yellow);
+}
 
 /* 区画見出しの上の英字の小ラベル（黄色の箱に黒の英字）。
    文言として数えないよう CSS の content で出す（読み上げ・表示テキストには入らない） */
@@ -133,20 +209,75 @@ p, dd, li{ text-wrap: pretty; }
   line-height: 1.1;
   letter-spacing: 0.06em;
 }
-.en-c::before{ margin-inline: auto; }
-@media (min-width: 640px){ .en::before{ font-size: 1.05rem; } }
-@media (min-width: 1024px){ .en::before{ font-size: 1.35rem; margin-bottom: 0.8rem; } }
+
+.en-c::before{
+  margin-inline: auto;
+}
+
+/* 全体の土台: 画面幅 sm 640px 以上 での大きさ・組みの調整 */
+@media (min-width: 640px){
+  .en::before{
+    font-size: 1.05rem;
+  }
+}
+
+/* 全体の土台: 画面幅 lg 1024px 以上 での大きさ・組みの調整 */
+@media (min-width: 1024px){
+  .en::before{
+    font-size: 1.35rem;
+    margin-bottom: 0.8rem;
+  }
+}
 
 /* 斜めに切った区画の境目（区画と区画の間に置く飾りの帯。文字は持たない）。
    --a が上の区画の色、--b が下の区画の色。.sl は右上がり、.sl.d は右下がり、.y で黄色の細い帯を添える */
-.sl{ position: relative; height: var(--sl); background: var(--a, var(--ink)); margin: -1px 0; z-index: 1; }
-.sl::before, .sl::after{ content: ""; position: absolute; inset: 0; pointer-events: none; }
-.sl::after{ background: var(--b, var(--paper)); clip-path: polygon(0 100%, 100% 0, 100% 100%); }
-.sl.d::after{ clip-path: polygon(0 0, 100% 100%, 0 100%); }
-.sl.y::before{ background: var(--yellow); clip-path: polygon(0 calc(100% - 7px), 100% 0, 100% 100%, 0 100%); }
-.sl.y::after{ clip-path: polygon(0 100%, 100% 7px, 100% 100%); }
-.sl.d.y::before{ clip-path: polygon(0 0, 100% calc(100% - 7px), 100% 100%, 0 100%); }
-.sl.d.y::after{ clip-path: polygon(0 7px, 100% 100%, 0 100%); }
+.sl{
+  position: relative;
+  height: var(--sl);
+  background: var(--a, var(--ink));
+  margin: -1px 0;
+  z-index: 1;
+}
+
+.sl::before, .sl::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sl::after{
+  background: var(--b, var(--paper));
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.sl.d::after{
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.sl.y::before{
+  background: var(--yellow);
+  clip-path: polygon(0 calc(100% - 7px), 100% 0, 100% 100%, 0 100%);
+}
+
+.sl.y::after{
+  clip-path: polygon(0 100%, 100% 7px, 100% 100%);
+}
+
+.sl.d.y::before{
+  clip-path: polygon(0 0, 100% calc(100% - 7px), 100% 100%, 0 100%);
+}
+
+.sl.d.y::after{
+  clip-path: polygon(0 7px, 100% 100%, 0 100%);
+}
 
 /* 公式LINEのマーク（白い吹き出し。公式ロゴ画像は読み込まない） */
-.line-ic{ display: inline-block; flex: none; width: 1.25em; height: 1.25em; vertical-align: -0.24em; margin-right: 0.4em; }
+.line-ic{
+  display: inline-block;
+  flex: none;
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: -0.24em;
+  margin-right: 0.4em;
+}

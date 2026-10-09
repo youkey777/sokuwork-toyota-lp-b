@@ -1,5 +1,4 @@
 /* ===== nayami：こんな悩み、ありませんか？（写真3枚＋白い吹き出し）＋共感文＋下向き矢印 ===== */
-
 section[data-unit="nayami"]{
   background: #052544;
   color: #fcfcfc;
@@ -104,76 +103,236 @@ section[data-unit="nayami"]{
 
 /* ===== sm 640〜: 写真を左、吹き出しを右に（しっぽは左向き） ===== */
 @media (min-width: 640px){
-  section[data-unit="nayami"]{ padding: 36px var(--g) 28px; }
-  .nayami-title{ font-size: 2.6rem; }
-  .nayami-list{ gap: 18px; margin-top: 22px; }
-  .nayami-item{ flex-direction: row; align-items: center; }
-  .nayami-photo{ width: 52%; flex: none; }
-  .nayami-bubble{ flex: 1; margin: 0 0 0 22px; padding: 18px 20px; font-size: 1.55rem; border-radius: 26px; }
-  .nayami-bubble::before{ left: -16px; top: calc(50% - 13px); width: 18px; height: 26px; clip-path: polygon(100% 0, 0 55%, 100% 100%); background: #fcfdfd; }
-  .nayami-body{ font-size: 1.3rem; margin-top: 30px; }
-  .nayami-catch{ font-size: 2.6rem; margin-top: 20px; }
-  .nayami-arrow{ width: 70px; height: 45px; }
+  section[data-unit="nayami"]{
+    padding: 36px var(--g) 28px;
+  }
+  .nayami-title{
+    font-size: 2.6rem;
+  }
+  .nayami-list{
+    gap: 18px;
+    margin-top: 22px;
+  }
+  .nayami-item{
+    flex-direction: row;
+    align-items: center;
+  }
+  .nayami-photo{
+    width: 52%;
+    flex: none;
+  }
+  .nayami-bubble{
+    flex: 1;
+    margin: 0 0 0 22px;
+    padding: 18px 20px;
+    font-size: 1.55rem;
+    border-radius: 26px;
+  }
+  .nayami-bubble::before{
+    left: -16px;
+    top: calc(50% - 13px);
+    width: 18px;
+    height: 26px;
+    clip-path: polygon(100% 0, 0 55%, 100% 100%);
+    background: #fcfdfd;
+  }
+  .nayami-body{
+    font-size: 1.3rem;
+    margin-top: 30px;
+  }
+  .nayami-catch{
+    font-size: 2.6rem;
+    margin-top: 20px;
+  }
+  .nayami-arrow{
+    width: 70px;
+    height: 45px;
+  }
 }
 
 /* ===== md 768〜 ===== */
 @media (min-width: 768px){
-  .nayami-title{ font-size: 3.6rem; }
-  .nayami-bubble{ font-size: 1.95rem; padding: 22px 20px 22px 24px; }
-  .nayami-body{ font-size: 1.6rem; }
-  .nayami-catch{ font-size: 3.6rem; }
+  .nayami-title{
+    font-size: 3.6rem;
+  }
+  .nayami-bubble{
+    font-size: 1.95rem;
+    padding: 22px 20px 22px 24px;
+  }
+  .nayami-body{
+    font-size: 1.6rem;
+  }
+  .nayami-catch{
+    font-size: 3.6rem;
+  }
 }
 
 /* ===== lg 1024〜（見本: 見出し76px・写真496幅・吹き出しの文字51px・共感文38px） ===== */
 @media (min-width: 1024px){
-  section[data-unit="nayami"]{ padding: 2rem 3.3rem 1.2rem 3rem; }
-  .nayami-title{ font-size: 4.75rem; letter-spacing: -0.04em; }
-  .nayami-list{ margin-top: 1.1rem; gap: 1.1rem; }
-  .nayami-photo{ width: 30rem; }
-  .nayami-bubble{ margin-left: 1.1rem; padding: 1.5rem 0.9rem 1.5rem 1.5rem; border-radius: 1.9rem; font-size: 3rem; line-height: 1.38; box-shadow: 0 0 0 1px #02183f, 4px 1px 0 1px #042b57, -4px 0 0 0 #052a51; }
-  .nayami-bubble::before{ left: -2.4rem; width: 2.6rem; height: 2rem; top: calc(50% - 1rem); }
-  .nayami-body{ font-size: 2.375rem; line-height: 1.5; margin-top: 2.4rem; letter-spacing: 0.03em; }
-  .nayami-catch{ font-size: 4.9rem; margin-top: 1.4rem; letter-spacing: -0.05em; }
-  .nayami-arrow{ width: 5.6rem; height: 3.6rem; margin-top: 1.3rem; }
+  section[data-unit="nayami"]{
+    padding: 2rem 3.3rem 1.2rem 3rem;
+  }
+  .nayami-title{
+    font-size: 4.75rem;
+    letter-spacing: -0.04em;
+  }
+  .nayami-list{
+    margin-top: 1.1rem;
+    gap: 1.1rem;
+  }
+  .nayami-photo{
+    width: 30rem;
+  }
+  .nayami-bubble{
+    margin-left: 1.1rem;
+    padding: 1.5rem 0.9rem 1.5rem 1.5rem;
+    border-radius: 1.9rem;
+    font-size: 3rem;
+    line-height: 1.38;
+    box-shadow: 0 0 0 1px #02183f, 4px 1px 0 1px #042b57, -4px 0 0 0 #052a51;
+  }
+  .nayami-bubble::before{
+    left: -2.4rem;
+    width: 2.6rem;
+    height: 2rem;
+    top: calc(50% - 1rem);
+  }
+  .nayami-body{
+    font-size: 2.375rem;
+    line-height: 1.5;
+    margin-top: 2.4rem;
+    letter-spacing: 0.03em;
+  }
+  .nayami-catch{
+    font-size: 4.9rem;
+    margin-top: 1.4rem;
+    letter-spacing: -0.05em;
+  }
+  .nayami-arrow{
+    width: 5.6rem;
+    height: 3.6rem;
+    margin-top: 1.3rem;
+  }
 }
 
 /* 吹き出しは1行に収める（2026-10-09 発注主指示）。吹き出しの中身の幅に合わせて文字の大きさを決める。
    一番長い「趣味のお金をもっと増やしたい」14字が入るよう 14.6 で割る。3つとも同じ大きさにそろう */
-.nayami-bubble{ container-type: inline-size; white-space: nowrap; -webkit-text-size-adjust: none; text-size-adjust: none; }
-.nayami-line{ display: inline; font-size: min(1em, calc(100cqi / 15.2)); }
+.nayami-bubble{
+  container-type: inline-size;
+  white-space: nowrap;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+.nayami-line{
+  display: inline;
+  font-size: min(1em, calc(100cqi / 15.2));
+}
 
 /* ===================== 案B（黒×黄）の見た目 2026-10-09 =====================
    黒の面・白い四角の吹き出し（黄色の影）。共感の一文は黄色 */
-section[data-unit="nayami"]{ background: var(--ink2); color: #fff; }
-.nayami-title .yl{ color: var(--yellow); }
-.nayami-photo{ border-radius: 0; }
-.nayami-bubble{ border-radius: 0; background: #fff; color: #111; box-shadow: 5px 5px 0 var(--yellow); }
-.nayami-bubble::before{ background: #fff; }
-.nayami-body{ color: #e3e5e6; }
-.nayami-catch{ color: var(--yellow); }
-.nayami-arrow-line{ stroke: var(--yellow); }
-@media (min-width: 640px){
-  .nayami-bubble{ border-radius: 0; }
-  .nayami-bubble::before{ background: #fff; }
+section[data-unit="nayami"]{
+  background: var(--ink2);
+  color: #fff;
 }
+
+.nayami-title .yl{
+  color: var(--yellow);
+}
+
+.nayami-photo{
+  border-radius: 0;
+}
+
+.nayami-bubble{
+  border-radius: 0;
+  background: #fff;
+  color: #111;
+  box-shadow: 5px 5px 0 var(--yellow);
+}
+
+.nayami-bubble::before{
+  background: #fff;
+}
+
+.nayami-body{
+  color: #e3e5e6;
+}
+
+.nayami-catch{
+  color: var(--yellow);
+}
+
+.nayami-arrow-line{
+  stroke: var(--yellow);
+}
+
+/* 悩み: 画面幅 sm 640px 以上 での大きさ・組みの調整 */
+@media (min-width: 640px){
+  .nayami-bubble{
+    border-radius: 0;
+  }
+  .nayami-bubble::before{
+    background: #fff;
+  }
+}
+
+/* 悩み: 画面幅 lg 1024px 以上 での大きさ・組みの調整 */
 @media (min-width: 1024px){
-  .nayami-bubble{ border-radius: 0; box-shadow: 7px 7px 0 var(--yellow); }
+  .nayami-bubble{
+    border-radius: 0;
+    box-shadow: 7px 7px 0 var(--yellow);
+  }
 }
 
 /* ===== 悩みの3枚を画像に固めた版（2026-10-09 発注主「スマホで合っていた形を吹き出しごと画像化して適用」） =====
    画像はスマホ 390幅・倍率3 の見た目そのもの（左右に黒い地 16px 分を含む）。tools/nayami_capture.py で作る。
    〜767: 画面幅いっぱいに縦3枚／768〜1023: 縦3枚で最大520px・中央／1024〜: 横に3枚（同じ大きさ・同じ間隔） */
-.nayami-list{ display: grid; grid-template-columns: 1fr; gap: 0; margin: 14px calc(-1 * var(--g)) 0; }
-.nayami-item{ display: block; }
-.nayami-card{ display: block; width: 100%; height: auto; }
-.nayami-list picture{ display: block; }
+.nayami-list{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 14px calc(-1 * var(--g)) 0;
+}
+
+.nayami-item{
+  display: block;
+}
+
+.nayami-card{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nayami-list picture{
+  display: block;
+}
+
+/* 悩み: 画面幅 sm 640px 以上 での大きさ・組みの調整 */
 @media (min-width: 640px){
-  .nayami-list{ gap: 0; margin-top: 18px; }
-  .nayami-item{ display: block; }
+  .nayami-list{
+    gap: 0;
+    margin-top: 18px;
+  }
+  .nayami-item{
+    display: block;
+  }
 }
+
+/* 悩み: 画面幅 md 768px 以上 での大きさ・組みの調整 */
 @media (min-width: 768px){
-  .nayami-list{ max-width: 520px; margin: 22px auto 0; }
+  .nayami-list{
+    max-width: 520px;
+    margin: 22px auto 0;
+  }
 }
+
+/* 悩み: 画面幅 lg 1024px 以上 での大きさ・組みの調整 */
 @media (min-width: 1024px){
-  .nayami-list{ max-width: none; grid-template-columns: repeat(3, 1fr); margin: 1.4rem -1.4rem 0; }
+  .nayami-list{
+    max-width: none;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1.4rem -1.4rem 0;
+  }
 }
