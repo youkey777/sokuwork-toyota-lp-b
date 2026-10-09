@@ -1,5 +1,5 @@
 /* 応募ボタン cta_A。部品は cta.css、ここは地の色と誘導文の長さ（全角換算。スマホで1行に収める文字の大きさの計算に使う）だけ */
 section[data-unit="cta_A"]{
   background: var(--ink);
-  --lead-len: 10.5;
+  --lead-len: 12.4;
 }

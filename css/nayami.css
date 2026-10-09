@@ -159,3 +159,21 @@ section[data-unit="nayami"]{ background: var(--ink2); color: #fff; }
 @media (min-width: 1024px){
   .nayami-bubble{ border-radius: 0; box-shadow: 7px 7px 0 var(--yellow); }
 }
+
+/* ===== 悩みの3枚を画像に固めた版（2026-10-09 発注主「スマホで合っていた形を吹き出しごと画像化して適用」） =====
+   画像はスマホ 390幅・倍率3 の見た目そのもの（左右に黒い地 16px 分を含む）。tools/nayami_capture.py で作る。
+   〜767: 画面幅いっぱいに縦3枚／768〜1023: 縦3枚で最大520px・中央／1024〜: 横に3枚（同じ大きさ・同じ間隔） */
+.nayami-list{ display: grid; grid-template-columns: 1fr; gap: 0; margin: 14px calc(-1 * var(--g)) 0; }
+.nayami-item{ display: block; }
+.nayami-card{ display: block; width: 100%; height: auto; }
+.nayami-list picture{ display: block; }
+@media (min-width: 640px){
+  .nayami-list{ gap: 0; margin-top: 18px; }
+  .nayami-item{ display: block; }
+}
+@media (min-width: 768px){
+  .nayami-list{ max-width: 520px; margin: 22px auto 0; }
+}
+@media (min-width: 1024px){
+  .nayami-list{ max-width: none; grid-template-columns: repeat(3, 1fr); margin: 1.4rem -1.4rem 0; }
+}

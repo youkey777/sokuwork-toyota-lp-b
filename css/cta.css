@@ -159,3 +159,8 @@
   .cta-btn-circle::before{ height: 5px; margin-top: -2.5px; }
   .cta-btn-circle::after{ border-width: 5px; }
 }
+/* 「公式LINEで応募する」: 文言が短くなったので1行。左に白いLINEのマーク */
+.cta-btn-text{ white-space: nowrap; font-size: min(6.2vw, 1.5rem); }
+@media (min-width: 640px){ .cta-btn-text{ font-size: 1.75rem; } }
+@media (min-width: 768px){ .cta-btn-text{ font-size: 2.2rem; } }
+@media (min-width: 1024px){ .cta-btn-text{ font-size: 2.8rem; } }

@@ -412,3 +412,5 @@ section[data-unit="hero"]{ background: var(--ink); color: #fff; display: flow-ro
   .hero-stats li, .hero-stats li + li{ padding: 6px 7px 6px; }
   .hero-s-unit{ margin-right: 0.15em; }
 }
+/* 右上の「LINEで応募」: 左に白いLINEのマーク */
+.hero-btn .line-ic{ width: 1.2em; height: 1.2em; margin-right: 0.05em; }

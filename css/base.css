@@ -147,3 +147,6 @@ p, dd, li{ text-wrap: pretty; }
 .sl.y::after{ clip-path: polygon(0 100%, 100% 7px, 100% 100%); }
 .sl.d.y::before{ clip-path: polygon(0 0, 100% calc(100% - 7px), 100% 100%, 0 100%); }
 .sl.d.y::after{ clip-path: polygon(0 7px, 100% 100%, 0 100%); }
+
+/* 公式LINEのマーク（白い吹き出し。公式ロゴ画像は読み込まない） */
+.line-ic{ display: inline-block; flex: none; width: 1.25em; height: 1.25em; vertical-align: -0.24em; margin-right: 0.4em; }

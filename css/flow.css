@@ -318,3 +318,11 @@ section[data-unit="flow"]{ background: var(--ink2); }
   .flow-btn-circle::after{ border-width: 4px; }
   .flow-sup{ border-left-width: 8px; }
 }
+/* 01 の「公式LINEで応募する」: 1行・左に白いLINEのマーク */
+.flow-btn-text{ white-space: nowrap; font-size: min(1.25rem, calc((100vw - 2 * var(--g) - 66px - 70px) / 10.8)); }
+.flow-step{ grid-template-columns: 52px minmax(0, 1fr); }
+@media (min-width: 640px){ .flow-step{ grid-template-columns: 70px minmax(0, 1fr); } }
+@media (min-width: 768px){ .flow-step{ grid-template-columns: 86px minmax(0, 1fr); } }
+@media (min-width: 1024px){ .flow-step{ grid-template-columns: 6.6rem minmax(0, 1fr); } }
+@media (min-width: 640px){ .flow-btn-text{ font-size: 1.5rem; } }
+@media (min-width: 1024px){ .flow-btn-text{ font-size: 1.9rem; } }

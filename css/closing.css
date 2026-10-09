@@ -432,3 +432,28 @@ section[data-unit="closing"]{ background: var(--ink2); color: #fff; }
 @media (min-width: 640px){ .closing-submit{ padding: 0 80px; } .closing-submit-t{ font-size: 2.4rem; } }
 @media (min-width: 768px){ .closing-submit-t{ font-size: 3rem; } }
 @media (min-width: 1024px){ .closing-submit{ padding: 0 7rem; } .closing-submit-t{ font-size: 4.3rem; } }
+
+/* ===== 応募フォームの代わり: 公式LINEで応募する区画（2026-10-09 発注主「応募は全部公式LINEへ」） ===== */
+.closing-line{ text-align: center; padding-bottom: 34px; }
+.closing-line .closing-ftitle{ white-space: nowrap; font-size: min(1.9rem, calc((100vw - 2 * var(--g)) / 12.6)); }
+.closing-line-text{ margin-top: 14px; font-size: 1.0625rem; font-weight: 700; line-height: 1.7; color: #222; }
+.closing-line-btn{ display: flex; align-items: center; justify-content: center; margin-top: 18px; text-decoration: none; }
+.closing-line-btn .line-ic{ width: 1.5em; height: 1.5em; margin-right: 0.35em; }
+@media (min-width: 640px){
+  .closing-line{ padding-bottom: 44px; }
+  .closing-line .closing-ftitle{ font-size: 2.4rem; }
+  .closing-line-text{ font-size: 1.3rem; }
+  .closing-line-btn .line-ic{ width: 2.6rem; height: 2.6rem; }
+}
+@media (min-width: 768px){ .closing-line-text{ font-size: 1.55rem; } .closing-line-btn .line-ic{ width: 3rem; height: 3rem; } }
+@media (min-width: 1024px){
+  .closing-line{ padding: 2.6rem 2.8rem 3.4rem; }
+  .closing-line .closing-ftitle{ font-size: 4rem; }
+  .closing-line-text{ font-size: 2rem; margin-top: 1.2rem; }
+  .closing-line-btn{ margin-top: 2rem; }
+  .closing-line-btn .line-ic{ width: 4rem; height: 4rem; }
+}
+.closing-line-btn .closing-submit-t{ white-space: nowrap; font-size: min(1.75rem, calc((100vw - 2 * var(--g) - 70px) / 11.4)); }
+@media (min-width: 640px){ .closing-line-btn .closing-submit-t{ font-size: 2.4rem; } }
+@media (min-width: 768px){ .closing-line-btn .closing-submit-t{ font-size: 3rem; } }
+@media (min-width: 1024px){ .closing-line-btn .closing-submit-t{ font-size: 3.5rem; } .closing-line-btn .line-ic{ width: 3.4rem; height: 3.4rem; } }
