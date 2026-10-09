@@ -558,7 +558,7 @@ section[data-unit="boshu"]{ background: var(--paper); color: #111; }
 .boshu-table tbody th{ background: var(--gray); border-right: 1px solid #a9adaf; }
 .boshu-table td + td{ border-left: 1px solid #a9adaf; }
 .boshu-li{ color: #111; }
-.boshu-list .boshu-li::before{ color: #e9eaea; }
+.boshu-list .boshu-li::before{ color: #d0d3d5; }
 .boshu-scard{ background: var(--yellow); border: 3px solid #111; border-radius: 0; color: #111; }
 .boshu-notes{ color: #4a4f52; }
 .boshu-hol2{ color: #111; font-style: italic; padding: 0 0.04em 0 0; background: linear-gradient(transparent 56%, var(--yellow) 56%, var(--yellow) 94%, transparent 94%); }
